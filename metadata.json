@@ -1,0 +1,6 @@
+{
+  "name": "Selma & Jamil - Mariage",
+  "description": "Site de mariage pour Selma Benabdallah et Jamil Joundy",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
