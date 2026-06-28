@@ -129,70 +129,40 @@ export default function Timeline() {
 
         {/* Timeline items */}
         <div className="relative">
-          {/* Vertical center line — desktop */}
+          {/* Vertical center line — desktop & mobile */}
           <div
-            className="absolute left-1/2 top-0 bottom-0 w-px -translate-x-1/2 hidden md:block"
+            className="absolute left-1/2 top-0 bottom-0 w-px -translate-x-1/2"
             style={{ background: 'linear-gradient(to bottom, transparent, rgba(154,142,120,0.25) 10%, rgba(154,142,120,0.25) 90%, transparent)' }}
           />
 
-          {/* Vertical left line — mobile */}
-          <div
-            className="absolute left-6 top-0 bottom-0 w-px md:hidden"
-            style={{ background: 'linear-gradient(to bottom, transparent, rgba(154,142,120,0.25) 10%, rgba(154,142,120,0.25) 90%, transparent)' }}
-          />
-
-          <div className="space-y-12 md:space-y-0">
+          <div className="space-y-6 md:space-y-0">
             {events.map((event, i) => {
               const isLeft = i % 2 === 0;
               return (
                 <motion.div
                   key={i}
-                  initial={{ opacity: 0, x: isLeft ? -30 : 30 }}
+                  initial={{ opacity: 0, x: isLeft ? -20 : 20 }}
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true, margin: '-80px' }}
                   transition={{ duration: 0.7, delay: 0.05, ease: [0.16, 1, 0.3, 1] }}
-                  className="relative flex items-center md:grid md:grid-cols-2 gap-0"
+                  className="relative grid grid-cols-2 gap-0 items-center"
                 >
-                  {/* Mobile layout */}
-                  <div className="md:hidden flex items-center gap-5 pl-16 py-3">
-                    {/* Mobile circular illustration badge */}
-                    <div
-                      className="absolute left-6 w-11 h-11 rounded-full border flex items-center justify-center z-10 -translate-x-1/2"
-                      style={{
-                        backgroundColor: 'var(--color-wedding-bg)',
-                        borderColor: 'rgba(154,142,120,0.3)',
-                        color: 'var(--color-wedding-gold)',
-                        boxShadow: '0 4px 10px rgba(92,96,72,0.06)'
-                      }}
-                    >
-                      {event.icon}
-                    </div>
-                    <div>
-                      <p className="font-serif uppercase tracking-[0.2em] text-[10px] font-semibold mb-1" style={{ color: 'var(--color-wedding-accent)' }}>
+                  {/* Left content */}
+                  <div className={`flex justify-end py-6 md:py-10 pr-6 md:pr-16 ${!isLeft ? 'invisible' : ''}`}>
+                    <div className="text-right max-w-[160px] md:max-w-none">
+                      <p className="font-serif uppercase tracking-[0.1em] md:tracking-[0.22em] text-[9px] md:text-xs font-semibold mb-1 md:mb-2" style={{ color: 'var(--color-wedding-accent)' }}>
                         {event.time}
                       </p>
-                      <p className="font-script text-2xl" style={{ color: 'var(--color-wedding-illustration)' }}>
+                      <p className="font-script text-[1.4rem] md:text-3xl leading-none" style={{ color: 'var(--color-wedding-illustration)' }}>
                         {event.title}
                       </p>
                     </div>
                   </div>
 
-                  {/* Desktop left content */}
-                  <div className={`hidden md:flex justify-end py-10 pr-16 ${!isLeft ? 'md:invisible' : ''}`}>
-                    <div className="text-right">
-                      <p className="font-serif uppercase tracking-[0.22em] text-xs font-semibold mb-2" style={{ color: 'var(--color-wedding-accent)' }}>
-                        {event.time}
-                      </p>
-                      <p className="font-script text-3xl" style={{ color: 'var(--color-wedding-illustration)' }}>
-                        {event.title}
-                      </p>
-                    </div>
-                  </div>
-
-                  {/* Desktop center illustration badge */}
-                  <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 hidden md:flex items-center justify-center z-10">
+                  {/* Center illustration badge */}
+                  <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 flex items-center justify-center z-10">
                     <div
-                      className="w-14 h-14 rounded-full border flex items-center justify-center transition-transform duration-300 hover:scale-110"
+                      className="w-10 h-10 md:w-14 md:h-14 rounded-full border flex items-center justify-center transition-transform duration-300 hover:scale-110"
                       style={{
                         backgroundColor: 'var(--color-wedding-bg)',
                         borderColor: 'rgba(154,142,120,0.4)',
@@ -200,17 +170,19 @@ export default function Timeline() {
                         boxShadow: '0 4px 12px rgba(92,96,72,0.08)'
                       }}
                     >
-                      {event.icon}
+                      <div className="scale-[0.7] md:scale-100 flex items-center justify-center text-[var(--color-wedding-gold)]">
+                        {event.icon}
+                      </div>
                     </div>
                   </div>
 
-                  {/* Desktop right content */}
-                  <div className={`hidden md:flex justify-start py-10 pl-16 ${isLeft ? 'md:invisible' : ''}`}>
-                    <div className="text-left">
-                      <p className="font-serif uppercase tracking-[0.22em] text-xs font-semibold mb-2" style={{ color: 'var(--color-wedding-accent)' }}>
+                  {/* Right content */}
+                  <div className={`flex justify-start py-6 md:py-10 pl-6 md:pl-16 ${isLeft ? 'invisible' : ''}`}>
+                    <div className="text-left max-w-[160px] md:max-w-none">
+                      <p className="font-serif uppercase tracking-[0.1em] md:tracking-[0.22em] text-[9px] md:text-xs font-semibold mb-1 md:mb-2" style={{ color: 'var(--color-wedding-accent)' }}>
                         {event.time}
                       </p>
-                      <p className="font-script text-3xl" style={{ color: 'var(--color-wedding-illustration)' }}>
+                      <p className="font-script text-[1.4rem] md:text-3xl leading-none" style={{ color: 'var(--color-wedding-illustration)' }}>
                         {event.title}
                       </p>
                     </div>
