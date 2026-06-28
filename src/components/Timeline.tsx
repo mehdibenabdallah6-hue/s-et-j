@@ -2,12 +2,95 @@ import React from 'react';
 import { motion } from 'motion/react';
 
 const events = [
-  { time: '17H00', title: 'Accueil des invités', icon: '✦' },
-  { time: '19H00', title: 'Accueil de la famille du marié', icon: '✦' },
-  { time: '19H30', title: 'Entrée de la mariée', icon: '♡' },
-  { time: '22H00', title: 'Doura', icon: '✦' },
-  { time: '23H00', title: 'Dîner', icon: '✦' },
-  { time: '00H30', title: 'Robe Blanche', icon: '♡' },
+  { 
+    time: '17H00', 
+    title: 'Accueil des invités', 
+    icon: (
+      <svg viewBox="0 0 100 100" className="w-8 h-8" fill="none" stroke="currentColor" strokeWidth="1.5">
+        <g transform="rotate(12 50 50)">
+          <path d="M36,32 L48,32 L45,55 C45,58 39,58 39,55 Z" />
+          <line x1="42" y1="57" x2="42" y2="73" />
+          <line x1="36" y1="73" x2="48" y2="73" />
+        </g>
+        <g transform="rotate(-12 50 50)">
+          <path d="M64,32 L52,32 L55,55 C55,58 61,58 61,55 Z" />
+          <line x1="58" y1="57" x2="58" y2="73" />
+          <line x1="52" y1="73" x2="64" y2="73" />
+        </g>
+        <circle cx="50" cy="36" r="1.5" fill="currentColor" />
+        <circle cx="46" cy="29" r="1" fill="currentColor" />
+        <circle cx="54" cy="29" r="1" fill="currentColor" />
+      </svg>
+    )
+  },
+  { 
+    time: '19H00', 
+    title: 'Famille du marié', 
+    icon: (
+      <svg viewBox="0 0 100 100" className="w-8 h-8" fill="none" stroke="currentColor" strokeWidth="1.5">
+        <path d="M35,63 C30,48 35,38 50,38 C65,38 70,48 65,63 C60,70 40,70 35,63 Z" />
+        <path d="M35,53 C22,48 20,38 18,34 C18,34 22,44 32,46" />
+        <path d="M64,46 C78,46 78,63 64,66" />
+        <path d="M42,38 C42,32 58,32 58,38 Z" />
+        <circle cx="50" cy="30" r="2" fill="currentColor" />
+        <path d="M40,67 C45,69 55,69 60,67" />
+      </svg>
+    )
+  },
+  { 
+    time: '19H30', 
+    title: 'Entrée de la mariée', 
+    icon: (
+      <svg viewBox="0 0 100 100" className="w-8 h-8" fill="none" stroke="currentColor" strokeWidth="1.5">
+        <path d="M15,75 C30,85 70,85 85,75" />
+        <path d="M15,75 L25,48 L38,62 L50,34 L62,62 L75,48 L85,75" />
+        <circle cx="50" cy="30" r="2.5" fill="currentColor" />
+        <circle cx="25" cy="44" r="2" fill="currentColor" />
+        <circle cx="75" cy="44" r="2" fill="currentColor" />
+        <circle cx="38" cy="58" r="1.5" fill="currentColor" />
+        <circle cx="62" cy="58" r="1.5" fill="currentColor" />
+      </svg>
+    )
+  },
+  { 
+    time: '22H00', 
+    title: 'Doura', 
+    icon: (
+      <svg viewBox="0 0 100 100" className="w-8 h-8" fill="none" stroke="currentColor" strokeWidth="1.5">
+        <line x1="12" y1="68" x2="88" y2="68" />
+        <rect x="25" y="44" width="50" height="24" rx="2" />
+        <path d="M25,44 C25,24 75,24 75,44" />
+        <circle cx="50" cy="20" r="2" fill="currentColor" />
+        <path d="M35,44 L35,68" />
+        <path d="M65,44 L65,68" />
+      </svg>
+    )
+  },
+  { 
+    time: '23H00', 
+    title: 'Dîner', 
+    icon: (
+      <svg viewBox="0 0 100 100" className="w-8 h-8" fill="none" stroke="currentColor" strokeWidth="1.5">
+        <path d="M15,72 C15,77 85,77 85,72 Z" />
+        <path d="M20,70 L47,38 C47,36 53,36 53,38 L80,70 Z" />
+        <rect x="46" y="30" width="8" height="8" rx="2" />
+        <path d="M42,20 C42,15 45,15 45,10" />
+        <path d="M50,22 C50,17 53,17 53,12" />
+      </svg>
+    )
+  },
+  { 
+    time: '00H30', 
+    title: 'Robe Blanche', 
+    icon: (
+      <svg viewBox="0 0 100 100" className="w-8 h-8" fill="none" stroke="currentColor" strokeWidth="1.5">
+        <path d="M45,28 C45,23 55,23 55,28 L50,30 Z" />
+        <line x1="35" y1="34" x2="65" y2="34" />
+        <path d="M45,34 L43,48 L25,82 C24,85 76,85 75,82 L57,48 L55,34 Z" />
+        <line x1="43" y1="50" x2="57" y2="50" />
+      </svg>
+    )
+  },
 ];
 
 export default function Timeline() {
@@ -54,11 +137,11 @@ export default function Timeline() {
 
           {/* Vertical left line — mobile */}
           <div
-            className="absolute left-5 top-0 bottom-0 w-px md:hidden"
+            className="absolute left-6 top-0 bottom-0 w-px md:hidden"
             style={{ background: 'linear-gradient(to bottom, transparent, rgba(154,142,120,0.25) 10%, rgba(154,142,120,0.25) 90%, transparent)' }}
           />
 
-          <div className="space-y-0">
+          <div className="space-y-12 md:space-y-0">
             {events.map((event, i) => {
               const isLeft = i % 2 === 0;
               return (
@@ -68,29 +151,24 @@ export default function Timeline() {
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true, margin: '-80px' }}
                   transition={{ duration: 0.7, delay: 0.05, ease: [0.16, 1, 0.3, 1] }}
-                  className="relative flex items-center md:grid md:grid-cols-2 gap-0 mb-10 md:mb-0"
+                  className="relative flex items-center md:grid md:grid-cols-2 gap-0"
                 >
                   {/* Mobile layout */}
-                  <div className="md:hidden flex items-start gap-5 pl-12">
-                    {/* Mobile dot */}
+                  <div className="md:hidden flex items-center gap-5 pl-16 py-3">
+                    {/* Mobile circular illustration badge */}
                     <div
-                      className="absolute left-5 top-3 w-2 h-2 rounded-full -translate-x-1/2"
-                      style={{ backgroundColor: 'var(--color-wedding-accent)', boxShadow: '0 0 0 4px rgba(243,237,226,1), 0 0 0 5px rgba(154,142,120,0.3)' }}
-                    />
-                    <div>
-                      <p className="font-serif uppercase tracking-[0.2em] text-sm font-semibold mb-1" style={{ color: 'var(--color-wedding-accent)' }}>
-                        {event.time}
-                      </p>
-                      <p className="font-serif text-lg italic" style={{ color: 'var(--color-wedding-illustration)' }}>
-                        {event.title}
-                      </p>
+                      className="absolute left-6 w-11 h-11 rounded-full border flex items-center justify-center z-10 -translate-x-1/2"
+                      style={{
+                        backgroundColor: 'var(--color-wedding-bg)',
+                        borderColor: 'rgba(154,142,120,0.3)',
+                        color: 'var(--color-wedding-gold)',
+                        boxShadow: '0 4px 10px rgba(92,96,72,0.06)'
+                      }}
+                    >
+                      {event.icon}
                     </div>
-                  </div>
-
-                  {/* Desktop left content */}
-                  <div className={`hidden md:flex justify-end py-8 pr-12 ${!isLeft ? 'md:invisible' : ''}`}>
-                    <div className="text-right">
-                      <p className="font-serif uppercase tracking-[0.22em] text-sm font-semibold mb-2" style={{ color: 'var(--color-wedding-accent)' }}>
+                    <div>
+                      <p className="font-serif uppercase tracking-[0.2em] text-[10px] font-semibold mb-1" style={{ color: 'var(--color-wedding-accent)' }}>
                         {event.time}
                       </p>
                       <p className="font-script text-2xl" style={{ color: 'var(--color-wedding-illustration)' }}>
@@ -99,14 +177,27 @@ export default function Timeline() {
                     </div>
                   </div>
 
-                  {/* Desktop center dot */}
+                  {/* Desktop left content */}
+                  <div className={`hidden md:flex justify-end py-10 pr-16 ${!isLeft ? 'md:invisible' : ''}`}>
+                    <div className="text-right">
+                      <p className="font-serif uppercase tracking-[0.22em] text-xs font-semibold mb-2" style={{ color: 'var(--color-wedding-accent)' }}>
+                        {event.time}
+                      </p>
+                      <p className="font-script text-3xl" style={{ color: 'var(--color-wedding-illustration)' }}>
+                        {event.title}
+                      </p>
+                    </div>
+                  </div>
+
+                  {/* Desktop center illustration badge */}
                   <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 hidden md:flex items-center justify-center z-10">
                     <div
-                      className="w-8 h-8 rounded-full border flex items-center justify-center text-[10px]"
+                      className="w-14 h-14 rounded-full border flex items-center justify-center transition-transform duration-300 hover:scale-110"
                       style={{
                         backgroundColor: 'var(--color-wedding-bg)',
                         borderColor: 'rgba(154,142,120,0.4)',
                         color: 'var(--color-wedding-gold)',
+                        boxShadow: '0 4px 12px rgba(92,96,72,0.08)'
                       }}
                     >
                       {event.icon}
@@ -114,12 +205,12 @@ export default function Timeline() {
                   </div>
 
                   {/* Desktop right content */}
-                  <div className={`hidden md:flex justify-start py-8 pl-12 ${isLeft ? 'md:invisible' : ''}`}>
+                  <div className={`hidden md:flex justify-start py-10 pl-16 ${isLeft ? 'md:invisible' : ''}`}>
                     <div className="text-left">
-                      <p className="font-serif uppercase tracking-[0.22em] text-sm font-semibold mb-2" style={{ color: 'var(--color-wedding-accent)' }}>
+                      <p className="font-serif uppercase tracking-[0.22em] text-xs font-semibold mb-2" style={{ color: 'var(--color-wedding-accent)' }}>
                         {event.time}
                       </p>
-                      <p className="font-script text-2xl" style={{ color: 'var(--color-wedding-illustration)' }}>
+                      <p className="font-script text-3xl" style={{ color: 'var(--color-wedding-illustration)' }}>
                         {event.title}
                       </p>
                     </div>
