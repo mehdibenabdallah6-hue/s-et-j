@@ -1,16 +1,38 @@
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Parisienne&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Parisienne&display=swap');
 @import "tailwindcss";
 
 @utility small-caps {
   font-variant-caps: all-small-caps;
 }
 
+@utility section-label {
+  font-family: var(--font-serif);
+  font-variant-caps: all-small-caps;
+  letter-spacing: 0.25em;
+  font-size: 0.75rem;
+  color: var(--color-wedding-illustration);
+  text-transform: uppercase;
+}
+
 @theme {
-  --color-wedding-bg: #F1EDE3;
-  --color-wedding-accent: #6B6F52;
-  --color-wedding-illustration: #8A8470;
+  --color-wedding-bg: #F3EDE2;
+  --color-wedding-accent: #5C6048;
+  --color-wedding-accent-light: #7A7E60;
+  --color-wedding-illustration: #9A8E78;
+  --color-wedding-gold: #C8A96E;
+  --color-wedding-dark: #2E2E2A;
   --font-script: "Parisienne", cursive;
   --font-serif: "Cormorant Garamond", serif;
+  --font-arabic: "Amiri", serif;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
 }
 
 body {
@@ -18,13 +40,60 @@ body {
   color: var(--color-wedding-accent);
   font-family: var(--font-serif);
   overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-html {
-  scroll-behavior: smooth;
+body.scroll-locked {
+  overflow: hidden;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
 }
 
 ::selection {
   background-color: var(--color-wedding-accent);
   color: var(--color-wedding-bg);
+}
+
+/* Decorative divider */
+.divider {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin: 1.5rem auto;
+  width: fit-content;
+}
+.divider::before,
+.divider::after {
+  content: '';
+  width: 48px;
+  height: 1px;
+  background: var(--color-wedding-illustration);
+  opacity: 0.4;
+}
+
+/* Smooth image loading */
+img {
+  display: block;
+  max-width: 100%;
+}
+
+/* Focus styles */
+:focus-visible {
+  outline: 2px solid var(--color-wedding-accent);
+  outline-offset: 3px;
+}
+
+/* Countdown flip numbers */
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+}
+
+/* Form placeholder */
+::placeholder {
+  color: var(--color-wedding-illustration);
+  opacity: 0.5;
+  font-style: italic;
 }

@@ -21,11 +21,21 @@ export default function App() {
     window.scrollTo(0, 0);
   }, []);
 
+  // Lock body scroll when envelope is visible
+  useEffect(() => {
+    if (!siteOpened) {
+      document.body.classList.add('scroll-locked');
+    } else {
+      document.body.classList.remove('scroll-locked');
+    }
+    return () => document.body.classList.remove('scroll-locked');
+  }, [siteOpened]);
+
   return (
     <div className="antialiased min-h-screen selection:bg-wedding-accent selection:text-wedding-bg">
       <Envelope onOpen={() => setSiteOpened(true)} />
       
-      <div className={`transition-opacity duration-1000 ${siteOpened ? 'opacity-100' : 'opacity-0 h-screen overflow-hidden'}`}>
+      <div className={`transition-opacity duration-1000 ${siteOpened ? 'opacity-100' : 'opacity-0 h-screen overflow-hidden pointer-events-none'}`}>
         <Navigation />
         <main>
           <Hero />

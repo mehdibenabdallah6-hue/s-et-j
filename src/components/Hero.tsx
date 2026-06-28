@@ -1,38 +1,164 @@
-import React from 'react';
-import { motion } from 'motion/react';
+import React, { useState, useEffect } from 'react';
+import { motion, useScroll, useTransform } from 'motion/react';
+import { ChevronDown } from 'lucide-react';
 
 export default function Hero() {
+  const { scrollY } = useScroll();
+  const bgY = useTransform(scrollY, [0, 600], ['0%', '18%']);
+  const opacity = useTransform(scrollY, [0, 400], [1, 0]);
+  const contentY = useTransform(scrollY, [0, 400], [0, -60]);
+
+  // Responsive background position
+  const [isMobile, setIsMobile] = useState(false);
+  useEffect(() => {
+    const check = () => setIsMobile(window.innerWidth < 768);
+    check();
+    window.addEventListener('resize', check);
+    return () => window.removeEventListener('resize', check);
+  }, []);
+
+  const scrollToInvitation = () => {
+    const el = document.querySelector('#invitation');
+    if (el) window.scrollTo({ top: (el as HTMLElement).offsetTop - 80, behavior: 'smooth' });
+  };
+
   return (
-    <section id="accueil" className="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden bg-[url('/bg-hero.png')] bg-cover bg-bottom bg-no-repeat">
-      <div className="absolute inset-0 bg-wedding-bg/40 pointer-events-none"></div>
-      
-      <div className="container mx-auto px-6 relative z-10 flex flex-col items-center text-center -mt-32">
-        <motion.h1
-          initial={{ opacity: 0, scale: 0.9 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 1.2, ease: "easeOut" }}
-          className="font-script text-7xl md:text-9xl text-wedding-accent mb-4 leading-tight mt-12"
+    <section id="accueil" className="relative min-h-screen flex items-center justify-center overflow-hidden">
+      {/* Parallax background — plein écran sans cadre, avec fondu calculé sur desktop */}
+      <motion.div
+        className="absolute inset-0 bg-no-repeat pointer-events-none"
+        style={{
+          backgroundImage: "url('/bg-hero.png')",
+          backgroundSize: isMobile ? 'cover' : 'auto 140%',
+          backgroundPosition: isMobile ? 'center' : 'center bottom',
+          y: bgY,
+        }}
+      >
+        {/* Horizontal edge blending overlays for desktop */}
+        {!isMobile && (
+          <>
+            <div 
+              className="absolute top-0 bottom-0 pointer-events-none"
+              style={{ 
+                left: 0, 
+                right: 'calc(50% + 36.66vh)', 
+                background: 'linear-gradient(to right, #F3EDE2, #F3EDE2 calc(100% - 10vh), rgba(243,237,226,0))' 
+              }}
+            />
+            <div 
+              className="absolute top-0 bottom-0 pointer-events-none"
+              style={{ 
+                right: 0, 
+                left: 'calc(50% + 36.66vh)', 
+                background: 'linear-gradient(to left, #F3EDE2, #F3EDE2 calc(100% - 10vh), rgba(243,237,226,0))' 
+              }}
+            />
+          </>
+        )}
+      </motion.div>
+
+      {/* Gradient overlay to transition to the next section */}
+      <div
+        className="absolute inset-0 pointer-events-none"
+        style={{
+          background: 'linear-gradient(to bottom, rgba(243,237,226,0.2) 0%, rgba(243,237,226,0.4) 60%, rgba(243,237,226,0.95) 100%)',
+        }}
+      />
+
+      {/* Content */}
+      <motion.div
+        style={{ y: contentY, opacity }}
+        className="relative z-10 flex flex-col items-center text-center px-6 -mt-16"
+      >
+        {/* Pre-title */}
+        <motion.p
+          initial={{ opacity: 0, letterSpacing: '0.1em' }}
+          animate={{ opacity: 1, letterSpacing: '0.35em' }}
+          transition={{ duration: 1.2, delay: 0.3, ease: 'easeOut' }}
+          className="uppercase text-[10px] font-serif mb-8"
+          style={{ color: 'var(--color-wedding-illustration)' }}
         >
-          Selma <br className="md:hidden" />
-          <span className="font-serif text-3xl md:text-5xl mx-4 italic text-wedding-illustration block md:inline my-4 md:my-0">&</span>
-          <br className="md:hidden" />
-          Jamil
-        </motion.h1>
+          Vous êtes invités
+        </motion.p>
+
+        {/* Names */}
+        <div className="overflow-visible py-2 px-4">
+          <motion.h1
+            initial={{ y: 80, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ duration: 1, delay: 0.5, ease: [0.16, 1, 0.3, 1] }}
+            className="font-script leading-none"
+            style={{
+              fontSize: 'clamp(5rem, 14vw, 11rem)',
+              color: 'var(--color-wedding-accent)',
+            }}
+          >
+            Selma
+          </motion.h1>
+        </div>
 
         <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 1, delay: 0.8 }}
-          className="mt-8 border-t border-wedding-accent pt-6 text-center"
+          initial={{ opacity: 0, scaleX: 0 }}
+          animate={{ opacity: 1, scaleX: 1 }}
+          transition={{ duration: 0.8, delay: 0.9 }}
+          className="flex items-center gap-6 my-3"
         >
-          <div className="font-serif small-caps text-lg tracking-[0.05em] text-wedding-accent space-y-2">
-            <p>Samedi 12 Septembre 2026 — 17h00</p>
-            <p>12 Rue des Marguerites, Anfa, Casablanca</p>
-          </div>
+          <span className="block h-px w-12 opacity-40" style={{ backgroundColor: 'var(--color-wedding-gold)' }} />
+          <span className="font-serif text-2xl md:text-3xl italic" style={{ color: 'var(--color-wedding-illustration)' }}>&</span>
+          <span className="block h-px w-12 opacity-40" style={{ backgroundColor: 'var(--color-wedding-gold)' }} />
         </motion.div>
-      </div>
+
+        <div className="overflow-visible py-2 px-4">
+          <motion.h1
+            initial={{ y: 80, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ duration: 1, delay: 0.7, ease: [0.16, 1, 0.3, 1] }}
+            className="font-script leading-none"
+            style={{
+              fontSize: 'clamp(5rem, 14vw, 11rem)',
+              color: 'var(--color-wedding-accent)',
+            }}
+          >
+            Jamil
+          </motion.h1>
+        </div>
+
+        {/* Date & Location */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 1.1 }}
+          className="mt-10 pt-7 border-t text-center"
+          style={{ borderColor: 'rgba(154,142,120,0.3)' }}
+        >
+          <p
+            className="font-serif uppercase tracking-[0.25em] text-sm mb-2"
+            style={{ color: 'var(--color-wedding-accent)' }}
+          >
+            Samedi 12 Septembre 2026 — 17h00
+          </p>
+          <p
+            className="font-serif text-sm tracking-[0.1em]"
+            style={{ color: 'var(--color-wedding-illustration)' }}
+          >
+            12 Rue des Marguerites, Anfa, Casablanca
+          </p>
+        </motion.div>
+      </motion.div>
+
+      {/* Scroll indicator */}
+      <motion.button
+        onClick={scrollToInvitation}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1, y: [0, 8, 0] }}
+        transition={{ opacity: { delay: 1.8, duration: 0.6 }, y: { delay: 2, duration: 2, repeat: Infinity, ease: 'easeInOut' } }}
+        className="absolute bottom-10 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-2 cursor-pointer transition-opacity hover:opacity-70"
+        style={{ color: 'var(--color-wedding-illustration)' }}
+        aria-label="Défiler vers le bas"
+      >
+        <span className="uppercase tracking-[0.25em] text-[9px] font-serif">Défiler</span>
+        <ChevronDown size={16} />
+      </motion.button>
     </section>
   );
 }
