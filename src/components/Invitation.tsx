@@ -17,14 +17,14 @@ export default function Invitation() {
   return (
     <section
       id="invitation"
-      className="py-32 md:py-44 relative overflow-hidden"
+      className="py-16 md:py-44 relative overflow-hidden"
     >
       {/* Background image container with aspect-ratio and edge blending */}
       <div
         className="absolute top-0 bottom-0 left-0 md:left-1/2 md:-translate-x-1/2 bg-no-repeat pointer-events-none"
         style={{
           backgroundImage: "url('/bg-invitation.png')",
-          backgroundSize: isMobile ? '115% auto' : 'cover',
+          backgroundSize: isMobile ? 'contain' : 'cover',
           backgroundPosition: 'center',
           ...(isMobile 
             ? { width: '100%' } 
@@ -86,7 +86,7 @@ export default function Invitation() {
           viewport={{ once: true, margin: '-80px' }}
           variants={fadeUp}
           custom={0}
-          className="text-3xl md:text-4xl mb-10 leading-relaxed"
+          className="text-2xl md:text-4xl mb-6 md:mb-10 leading-relaxed"
           style={{ fontFamily: "'Amiri', serif", direction: 'rtl', color: 'var(--color-wedding-accent)' }}
         >
           بِسْمِ اللهِ الرَّحْمٰنِ الرَّحِيْمِ
@@ -99,7 +99,7 @@ export default function Invitation() {
           viewport={{ once: true }}
           variants={fadeUp}
           custom={0.1}
-          className="flex items-center justify-center gap-4 mb-10 opacity-40"
+          className="flex items-center justify-center gap-4 mb-6 md:mb-10 opacity-40"
         >
           <span className="block h-px w-16" style={{ backgroundColor: 'var(--color-wedding-gold)' }} />
           <span style={{ color: 'var(--color-wedding-gold)', fontSize: '1.1rem' }}>✦</span>
@@ -115,13 +115,13 @@ export default function Invitation() {
           custom={0.15}
         >
           <p
-            className="font-serif uppercase tracking-[0.25em] text-sm mb-3"
+            className="font-serif uppercase tracking-[0.2em] md:tracking-[0.25em] text-xs md:text-sm mb-2 md:mb-3"
             style={{ color: 'var(--color-wedding-accent)' }}
           >
             Leila & Karim Benabdallah
           </p>
           <p
-            className="font-serif text-base italic"
+            className="font-serif text-sm md:text-base italic"
             style={{ color: 'var(--color-wedding-illustration)' }}
           >
             ont la joie de vous convier au mariage de leur fille
@@ -135,8 +135,8 @@ export default function Invitation() {
           viewport={{ once: true }}
           variants={fadeUp}
           custom={0.2}
-          className="font-script mt-12 mb-2 leading-none"
-          style={{ fontSize: 'clamp(4.5rem, 12vw, 7rem)', color: 'var(--color-wedding-accent)' }}
+          className="font-script mt-8 md:mt-12 mb-1 md:mb-2 leading-none"
+          style={{ fontSize: 'clamp(3.5rem, 10vw, 7rem)', color: 'var(--color-wedding-accent)' }}
         >
           Selma
         </motion.h2>
@@ -147,7 +147,7 @@ export default function Invitation() {
           viewport={{ once: true }}
           variants={fadeUp}
           custom={0.25}
-          className="font-serif text-xl italic my-4"
+          className="font-serif text-lg md:text-xl italic my-2 md:my-4"
           style={{ color: 'var(--color-wedding-illustration)' }}
         >
           avec
@@ -159,8 +159,8 @@ export default function Invitation() {
           viewport={{ once: true }}
           variants={fadeUp}
           custom={0.3}
-          className="font-script leading-none mb-12"
-          style={{ fontSize: 'clamp(4.5rem, 12vw, 7rem)', color: 'var(--color-wedding-accent)' }}
+          className="font-script leading-none mb-8 md:mb-12"
+          style={{ fontSize: 'clamp(3.5rem, 10vw, 7rem)', color: 'var(--color-wedding-accent)' }}
         >
           Jamil Joundy
         </motion.h2>
@@ -172,7 +172,7 @@ export default function Invitation() {
           viewport={{ once: true }}
           variants={fadeUp}
           custom={0.35}
-          className="flex items-center justify-center gap-4 mb-10 opacity-40"
+          className="flex items-center justify-center gap-4 mb-6 md:mb-10 opacity-40"
         >
           <span className="block h-px w-16" style={{ backgroundColor: 'var(--color-wedding-gold)' }} />
           <span style={{ color: 'var(--color-wedding-gold)', fontSize: '1.1rem' }}>✦</span>
@@ -185,7 +185,7 @@ export default function Invitation() {
           viewport={{ once: true }}
           variants={fadeUp}
           custom={0.4}
-          className="font-serif text-base leading-loose"
+          className="font-serif text-sm md:text-base leading-relaxed md:leading-loose"
           style={{ color: 'var(--color-wedding-illustration)' }}
         >
           et seraient ravis de célébrer avec vous<br />
