@@ -24,7 +24,7 @@ export default function Invitation() {
         className="absolute top-0 bottom-0 left-0 md:left-1/2 md:-translate-x-1/2 bg-no-repeat pointer-events-none"
         style={{
           backgroundImage: "url('/bg-invitation.png')",
-          backgroundSize: 'cover',
+          backgroundSize: isMobile ? '115% auto' : 'cover',
           backgroundPosition: 'center',
           ...(isMobile 
             ? { width: '100%' } 
