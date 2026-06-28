@@ -18,7 +18,7 @@ export default function Location() {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <p className="uppercase tracking-[0.3em] text-[10px] font-serif mb-3" style={{ color: 'var(--color-wedding-illustration)' }}>
+          <p className="uppercase tracking-[0.2em] md:tracking-[0.3em] text-[11px] md:text-xs font-serif mb-3" style={{ color: 'var(--color-wedding-illustration)' }}>
             Où nous rejoindre
           </p>
           <h2 className="font-script" style={{ fontSize: 'clamp(3rem, 8vw, 5rem)', color: 'var(--color-wedding-accent)' }}>
@@ -68,7 +68,7 @@ export default function Location() {
               ].map(({ label, value }) => (
                 <div key={label} className="flex items-baseline gap-3 justify-center md:justify-start">
                   <span
-                    className="font-serif uppercase tracking-[0.2em] text-[10px]"
+                    className="font-serif uppercase tracking-[0.2em] text-[11px] md:text-xs"
                     style={{ color: 'var(--color-wedding-illustration)' }}
                   >
                     {label}

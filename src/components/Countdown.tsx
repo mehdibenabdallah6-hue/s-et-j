@@ -92,7 +92,7 @@ export default function Countdown() {
           transition={{ duration: 0.8 }}
           className="text-center mb-14"
         >
-          <p className="uppercase tracking-[0.3em] text-[10px] font-serif mb-3" style={{ color: 'var(--color-wedding-illustration)' }}>
+          <p className="uppercase tracking-[0.2em] md:tracking-[0.3em] text-[11px] md:text-xs font-serif mb-3" style={{ color: 'var(--color-wedding-illustration)' }}>
             Compte à rebours
           </p>
           <h2 className="font-script" style={{ fontSize: 'clamp(3rem, 8vw, 5rem)', color: 'var(--color-wedding-accent)' }}>
@@ -131,7 +131,7 @@ export default function Countdown() {
                   style={{
                     color: 'var(--color-wedding-illustration)',
                     letterSpacing: '0.25em',
-                    fontSize: 'clamp(0.55rem, 1.2vw, 0.7rem)',
+                    fontSize: 'clamp(0.65rem, 1.5vw, 0.75rem)',
                   }}
                 >
                   {unit}

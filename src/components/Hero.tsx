@@ -75,7 +75,7 @@ export default function Hero() {
           initial={{ opacity: 0, letterSpacing: '0.1em' }}
           animate={{ opacity: 1, letterSpacing: '0.35em' }}
           transition={{ duration: 1.2, delay: 0.3, ease: 'easeOut' }}
-          className="uppercase text-[10px] font-serif mb-8"
+          className="uppercase text-[11px] md:text-xs font-serif mb-8"
           style={{ color: 'var(--color-wedding-illustration)' }}
         >
           Vous êtes invités
@@ -89,7 +89,7 @@ export default function Hero() {
             transition={{ duration: 1, delay: 0.5, ease: [0.16, 1, 0.3, 1] }}
             className="font-script leading-none"
             style={{
-              fontSize: 'clamp(5rem, 14vw, 11rem)',
+              fontSize: 'clamp(4.5rem, 14vw, 9.5rem)',
               color: 'var(--color-wedding-accent)',
             }}
           >
@@ -115,7 +115,7 @@ export default function Hero() {
             transition={{ duration: 1, delay: 0.7, ease: [0.16, 1, 0.3, 1] }}
             className="font-script leading-none"
             style={{
-              fontSize: 'clamp(5rem, 14vw, 11rem)',
+              fontSize: 'clamp(4.5rem, 14vw, 9.5rem)',
               color: 'var(--color-wedding-accent)',
             }}
           >
@@ -132,13 +132,13 @@ export default function Hero() {
           style={{ borderColor: 'rgba(154,142,120,0.3)' }}
         >
           <p
-            className="font-serif uppercase tracking-[0.25em] text-sm mb-2"
+            className="font-serif uppercase tracking-[0.2em] md:tracking-[0.25em] text-xs md:text-sm mb-2"
             style={{ color: 'var(--color-wedding-accent)' }}
           >
             Samedi 12 Septembre 2026 — 17h00
           </p>
           <p
-            className="font-serif text-sm tracking-[0.1em]"
+            className="font-serif text-[11px] md:text-sm tracking-[0.05em] md:tracking-[0.1em]"
             style={{ color: 'var(--color-wedding-illustration)' }}
           >
             12 Rue des Marguerites, Anfa, Casablanca

@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from 'motion/react';
 import { Send, CheckCircle } from 'lucide-react';
 
 const inputClass = "w-full bg-transparent py-3 text-base font-serif transition-colors duration-300 focus:outline-none placeholder:italic placeholder:text-[rgba(154,142,120,0.45)]";
-const labelClass = "block uppercase tracking-[0.2em] text-[10px] font-serif mb-2";
+const labelClass = "block uppercase tracking-[0.2em] text-[11px] md:text-xs font-serif mb-2";
 
 export default function RSVP() {
   const [status, setStatus] = useState<'idle' | 'submitting' | 'success'>('idle');
@@ -38,7 +38,7 @@ export default function RSVP() {
           transition={{ duration: 0.8 }}
           className="text-center mb-14"
         >
-          <p className="uppercase tracking-[0.3em] text-[10px] font-serif mb-3" style={{ color: 'var(--color-wedding-illustration)' }}>
+          <p className="uppercase tracking-[0.2em] md:tracking-[0.3em] text-[11px] md:text-xs font-serif mb-3" style={{ color: 'var(--color-wedding-illustration)' }}>
             Répondez s'il vous plaît
           </p>
           <h2 className="font-script" style={{ fontSize: 'clamp(3rem, 8vw, 5rem)', color: 'var(--color-wedding-accent)' }}>
@@ -90,7 +90,7 @@ export default function RSVP() {
                 <p className="font-serif text-lg italic mb-2" style={{ color: 'var(--color-wedding-illustration)' }}>
                   Votre réponse a bien été enregistrée.
                 </p>
-                <p className="uppercase tracking-[0.2em] text-[10px] font-serif" style={{ color: 'var(--color-wedding-illustration)' }}>
+                <p className="uppercase tracking-[0.2em] text-[11px] md:text-xs font-serif" style={{ color: 'var(--color-wedding-illustration)' }}>
                   Nous avons hâte de célébrer avec vous.
                 </p>
               </motion.div>

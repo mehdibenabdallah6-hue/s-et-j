@@ -36,7 +36,7 @@ export default function Scene1Envelope({ onOpen }: Scene1EnvelopeProps) {
     >
       {/* 3D Perspective Wrapper for Envelope */}
       <motion.div 
-        className="relative w-[340px] h-[240px] max-w-[90vw] cursor-pointer"
+        className="relative w-[88vw] max-w-[400px] aspect-[3/2] cursor-pointer"
         style={{ perspective: 1500 }}
         onClick={handleOpen}
         whileHover={!isOpen ? { scale: 1.02, y: -4 } : {}}
@@ -50,53 +50,53 @@ export default function Scene1Envelope({ onOpen }: Scene1EnvelopeProps) {
 
         {/* The Invitation Card Inside */}
         <motion.div 
-          className="absolute left-2 right-2 top-2 bottom-2 bg-[#FDFBF7] rounded flex flex-col items-center justify-center p-3 shadow-md"
+          className="absolute inset-2 sm:inset-3 bg-[#FDFBF7] rounded flex flex-col items-center justify-center p-2 sm:p-3 shadow-md"
           animate={isOpen ? { y: -40, opacity: 1 } : { y: 0, opacity: 0.8 }}
           transition={{ duration: 0.8, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
         >
-          <div className="border border-[#C8A96E]/40 w-full h-full flex flex-col items-center justify-center p-4 text-center">
-             <p className="uppercase tracking-[0.25em] text-[9px] text-[#5C6048]/60 mb-2 font-serif">Invitation</p>
-             <span className="font-script text-4xl text-[#C8A96E]">Selma & Jamil</span>
+          <div className="border border-[#C8A96E]/40 w-full h-full flex flex-col items-center justify-center p-2 sm:p-4 text-center">
+             <p className="uppercase tracking-[0.25em] text-[8px] sm:text-[10px] text-[#5C6048]/60 mb-1 sm:mb-2 font-serif">Invitation</p>
+             <span className="font-script text-3xl sm:text-4xl text-[#C8A96E]">Selma & Jamil</span>
           </div>
         </motion.div>
 
         {/* Envelope Front Pocket (Side and Bottom Flaps) */}
         <div className="absolute inset-0 z-10 pointer-events-none drop-shadow-xl">
-          <svg className="w-full h-full" viewBox="0 0 340 240" preserveAspectRatio="none">
+          <svg className="w-full h-full" viewBox="0 0 300 200" preserveAspectRatio="none">
             {/* Left flap */}
-            <polygon points="0,0 150,130 0,240" fill="#E5DEC9" stroke="#DFD9C9" strokeWidth="1" strokeLinejoin="round" />
+            <polygon points="0,0 150,110 0,200" fill="#E5DEC9" stroke="#DFD9C9" strokeWidth="1" strokeLinejoin="round" />
             {/* Right flap */}
-            <polygon points="340,0 190,130 340,240" fill="#E5DEC9" stroke="#DFD9C9" strokeWidth="1" strokeLinejoin="round" />
+            <polygon points="300,0 150,110 300,200" fill="#E5DEC9" stroke="#DFD9C9" strokeWidth="1" strokeLinejoin="round" />
             {/* Bottom flap */}
-            <polygon points="0,240 170,140 340,240" fill="#E8E2D2" stroke="#DFD9C9" strokeWidth="1" strokeLinejoin="round" />
+            <polygon points="0,200 150,120 300,200" fill="#E8E2D2" stroke="#DFD9C9" strokeWidth="1" strokeLinejoin="round" />
           </svg>
         </div>
 
         {/* Envelope Top Flap */}
         <motion.div
-          className="absolute inset-x-0 top-0 h-[145px] z-20 origin-top"
+          className="absolute inset-x-0 top-0 h-[60%] z-20 origin-top"
           style={{ transformStyle: 'preserve-3d' }}
           animate={{ rotateX: isOpen ? 180 : 0 }}
           transition={{ duration: 0.8, ease: [0.64, 0, 0.08, 1] }}
         >
           {/* Front of flap */}
           <div className="absolute inset-0" style={{ backfaceVisibility: 'hidden' }}>
-            <svg className="w-full h-full drop-shadow-md" viewBox="0 0 340 145" preserveAspectRatio="none">
-              <polygon points="0,0 340,0 170,145" fill="#E3DCC8" stroke="#DFD9C9" strokeWidth="1" strokeLinejoin="round" />
+            <svg className="w-full h-full drop-shadow-md" viewBox="0 0 300 120" preserveAspectRatio="none">
+              <polygon points="0,0 300,0 150,120" fill="#E3DCC8" stroke="#DFD9C9" strokeWidth="1" strokeLinejoin="round" />
             </svg>
           </div>
           
           {/* Back of flap (visible when rotated) */}
           <div className="absolute inset-0" style={{ backfaceVisibility: 'hidden', transform: 'rotateX(180deg)' }}>
-            <svg className="w-full h-full drop-shadow-md" viewBox="0 0 340 145" preserveAspectRatio="none">
+            <svg className="w-full h-full drop-shadow-md" viewBox="0 0 300 120" preserveAspectRatio="none">
               {/* Note: y-coordinates are inverted because it's rotated 180deg */}
-              <polygon points="0,145 340,145 170,0" fill="#D8D1C0" />
+              <polygon points="0,120 300,120 150,0" fill="#D8D1C0" />
             </svg>
           </div>
 
           {/* Wax Seal */}
           <motion.div
-            className="absolute left-1/2 top-full -translate-x-1/2 -translate-y-1/2 w-16 h-16 z-30"
+            className="absolute left-1/2 top-full -translate-x-1/2 -translate-y-1/2 w-12 h-12 sm:w-16 sm:h-16 z-30"
             style={{ transformOrigin: 'center center' }}
             animate={
               isOpen
@@ -145,7 +145,7 @@ export default function Scene1Envelope({ onOpen }: Scene1EnvelopeProps) {
 
       {/* Incitation Text Label */}
       <motion.p
-        className="absolute bottom-16 uppercase tracking-[0.3em] text-[10px] font-serif text-[#5C6048] select-none"
+        className="absolute bottom-8 sm:bottom-16 uppercase tracking-[0.3em] text-[9px] sm:text-[10px] font-serif text-[#5C6048] select-none"
         animate={
           isOpen
             ? { opacity: 0, y: 10 }
