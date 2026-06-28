@@ -21,13 +21,13 @@ export default function Invitation() {
     >
       {/* Background image container with aspect-ratio and edge blending */}
       <div
-        className="absolute top-0 bottom-0 left-1/2 -translate-x-1/2 bg-no-repeat pointer-events-none"
+        className="absolute top-0 bottom-0 left-0 md:left-1/2 md:-translate-x-1/2 bg-no-repeat pointer-events-none"
         style={{
           backgroundImage: "url('/bg-invitation.png')",
           backgroundSize: 'cover',
           backgroundPosition: 'center',
           ...(isMobile 
-            ? { left: 0, right: 0, transform: 'none', width: '100%' } 
+            ? { width: '100%' } 
             : { 
                 height: '100%', 
                 aspectRatio: '1055/1491',
