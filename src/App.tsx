@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 import React, { useState, useEffect } from 'react';
-import Envelope from './components/Envelope';
+import Scene1Envelope from './components/Scene1Envelope';
 import Navigation from './components/Navigation';
 import Hero from './components/Hero';
 import Invitation from './components/Invitation';
@@ -33,7 +33,7 @@ export default function App() {
 
   return (
     <div className="antialiased min-h-screen selection:bg-wedding-accent selection:text-wedding-bg">
-      <Envelope onOpen={() => setSiteOpened(true)} />
+      <Scene1Envelope onOpen={() => setSiteOpened(true)} />
       
       <div className={`transition-opacity duration-1000 ${siteOpened ? 'opacity-100' : 'opacity-0 h-screen overflow-hidden pointer-events-none'}`}>
         <Navigation />
