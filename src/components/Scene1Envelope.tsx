@@ -9,9 +9,10 @@ export default function Scene1Envelope({ onOpen }: Scene1EnvelopeProps) {
   const [isPlaying, setIsPlaying] = useState(false);
   const [isEnded, setIsEnded] = useState(false);
   const videoRef = useRef<HTMLVideoElement>(null);
+  const transitionTriggered = useRef(false);
 
   const handlePlay = () => {
-    if (isPlaying || isEnded) return;
+    if (isPlaying || transitionTriggered.current) return;
     
     if (videoRef.current) {
       videoRef.current.play().then(() => {
@@ -25,10 +26,22 @@ export default function Scene1Envelope({ onOpen }: Scene1EnvelopeProps) {
   };
 
   const handleVideoEnd = () => {
+    if (transitionTriggered.current) return;
+    transitionTriggered.current = true;
     setIsEnded(true);
     setTimeout(() => {
       onOpen();
-    }, 1200); // Attendre la fin du fondu pour révéler le site
+    }, 1500); // Wait for the 1.5s fade out to complete before revealing the site
+  };
+
+  const handleTimeUpdate = () => {
+    if (!videoRef.current || transitionTriggered.current) return;
+    
+    const timeRemaining = videoRef.current.duration - videoRef.current.currentTime;
+    // Si la vidéo est à 1.5 seconde (ou moins) de la fin, on lance le fondu croisé
+    if (timeRemaining <= 1.5) {
+      handleVideoEnd();
+    }
   };
 
   return (
@@ -38,7 +51,7 @@ export default function Scene1Envelope({ onOpen }: Scene1EnvelopeProps) {
         opacity: isEnded ? 0 : 1,
       }}
       transition={{ 
-        duration: 1.2,
+        duration: 1.5,
         ease: [0.76, 0, 0.24, 1]
       }}
       onClick={handlePlay}
@@ -48,6 +61,7 @@ export default function Scene1Envelope({ onOpen }: Scene1EnvelopeProps) {
         className="absolute inset-0 w-full h-full object-cover"
         src="/envelope-intro.mp4"
         playsInline
+        onTimeUpdate={handleTimeUpdate}
         onEnded={handleVideoEnd}
       />
 
