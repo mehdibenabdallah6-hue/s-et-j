@@ -101,7 +101,7 @@ const events = [
 
 export default function Timeline() {
   return (
-    <section id="programme" className="py-24 md:py-36 relative overflow-hidden">
+    <section id="programme" className="py-24 md:py-44 relative overflow-hidden">
       {/* Background Image */}
       <div
         className="absolute inset-0 pointer-events-none opacity-[0.25] mix-blend-multiply"

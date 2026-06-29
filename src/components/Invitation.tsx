@@ -10,7 +10,7 @@ export default function Invitation() {
   return (
     <section
       id="invitation"
-      className="py-16 md:py-44 relative overflow-hidden"
+      className="py-24 md:py-44 relative overflow-hidden"
     >
       {/* Background Image */}
       <div

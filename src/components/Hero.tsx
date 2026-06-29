@@ -148,10 +148,11 @@ export default function Hero() {
             >
               12 Rue des Marguerites, Anfa, Casablanca
             </p>
-
-            <Countdown />
           </div>
         </motion.div>
+
+        {/* Countdown — below the card */}
+        <Countdown />
       </motion.div>
 
       {/* Scroll indicator */}

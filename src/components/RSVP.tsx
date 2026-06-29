@@ -28,7 +28,7 @@ export default function RSVP() {
   };
 
   return (
-    <section id="rsvp" className="py-24 md:py-36 relative" style={{ backgroundColor: 'var(--color-wedding-bg)' }}>
+    <section id="rsvp" className="py-32 md:py-44 relative" style={{ backgroundColor: 'var(--color-wedding-bg)' }}>
       <div className="container mx-auto px-6 max-w-xl">
         {/* Header */}
         <motion.div
@@ -36,7 +36,7 @@ export default function RSVP() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="text-center mb-14"
+          className="text-center mb-10"
         >
           <p className="uppercase tracking-[0.2em] md:tracking-[0.3em] text-[11px] md:text-xs font-serif mb-3" style={{ color: 'var(--color-wedding-illustration)' }}>
             Répondez s'il vous plaît
@@ -57,7 +57,7 @@ export default function RSVP() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.9, delay: 0.1 }}
-          className="relative p-8 md:p-12"
+          className="relative p-6 md:p-10"
           style={{
             background: 'rgba(255,255,255,0.35)',
             border: '1px solid rgba(154,142,120,0.3)',
@@ -98,12 +98,12 @@ export default function RSVP() {
               <motion.form
                 key="form"
                 onSubmit={handleSubmit}
-                className="space-y-7 text-left"
+                className="space-y-5 text-left"
                 initial={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
               >
                 {/* Row 1 */}
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-7">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
                   <div>
                     <label htmlFor="rsvp-name" className={labelClass} style={{ color: 'var(--color-wedding-illustration)' }}>Nom & Prénom</label>
                     <input
@@ -183,7 +183,7 @@ export default function RSVP() {
                 <div>
                   <label htmlFor="rsvp-allergies" className={labelClass} style={{ color: 'var(--color-wedding-illustration)' }}>Allergies / Régime alimentaire</label>
                   <textarea
-                    id="rsvp-allergies" name="allergies" rows={2}
+                    id="rsvp-allergies" name="allergies" rows={1}
                     value={formData.allergies} onChange={handleChange}
                     placeholder="Précisez si nécessaire…"
                     className={inputClass + ' resize-none'}

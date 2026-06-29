@@ -6,7 +6,7 @@ export default function Location() {
   const [mapLoaded, setMapLoaded] = useState(false);
 
   return (
-    <section id="lieu" className="py-24 md:py-36 relative" style={{ backgroundColor: 'rgba(255,255,255,0.25)' }}>
+    <section id="lieu" className="py-32 md:py-44 relative" style={{ backgroundColor: 'rgba(255,255,255,0.25)' }}>
       {/* Top border */}
       <div className="absolute top-0 left-0 right-0 h-px" style={{ background: 'linear-gradient(to right, transparent, rgba(154,142,120,0.25), transparent)' }} />
       <div className="absolute bottom-0 left-0 right-0 h-px" style={{ background: 'linear-gradient(to right, transparent, rgba(154,142,120,0.25), transparent)' }} />
