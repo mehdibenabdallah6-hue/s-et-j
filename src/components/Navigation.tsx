@@ -72,7 +72,7 @@ export default function Navigation() {
           <a
             href="#accueil"
             onClick={(e) => scrollTo(e, '#accueil')}
-            className="md:absolute md:left-6 font-script text-3xl transition-opacity hover:opacity-70"
+            className="md:absolute md:left-6 font-serif text-xl md:text-2xl font-bold tracking-widest transition-opacity hover:opacity-70"
             style={{ color: 'var(--color-wedding-accent)' }}
           >
             S & J
