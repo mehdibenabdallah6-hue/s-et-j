@@ -165,8 +165,10 @@ export default function Timeline() {
                         </p>
                       </div>
                     ) : event.image ? (
-                      <div className="flex justify-center opacity-90 mix-blend-multiply w-24 md:w-32">
-                        <img src={event.image} alt="" className="object-contain" />
+                      <div className="flex justify-center w-20 md:w-28">
+                        <div className="p-1 rounded-full border border-[rgba(154,142,120,0.3)] bg-white shadow-sm transition-transform duration-500 hover:scale-105">
+                          <img src={event.image} alt="" className="w-full aspect-square object-cover rounded-full" />
+                        </div>
                       </div>
                     ) : null}
                   </div>
@@ -200,8 +202,10 @@ export default function Timeline() {
                         </p>
                       </div>
                     ) : event.image ? (
-                      <div className="flex justify-center opacity-90 mix-blend-multiply w-24 md:w-32">
-                        <img src={event.image} alt="" className="object-contain" />
+                      <div className="flex justify-center w-20 md:w-28">
+                        <div className="p-1 rounded-full border border-[rgba(154,142,120,0.3)] bg-white shadow-sm transition-transform duration-500 hover:scale-105">
+                          <img src={event.image} alt="" className="w-full aspect-square object-cover rounded-full" />
+                        </div>
                       </div>
                     ) : null}
                   </div>
