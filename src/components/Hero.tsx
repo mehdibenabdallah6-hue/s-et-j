@@ -117,15 +117,14 @@ export default function Hero() {
           transition={{ duration: 0.8, delay: 1.1 }}
           className="mt-14 text-center"
         >
-          <div className="mb-4" style={{ color: 'var(--color-wedding-accent)' }}>
-            <p className="font-serif uppercase tracking-[0.2em] md:tracking-[0.3em] text-sm md:text-base font-semibold mb-1 opacity-80">
-              Samedi
-            </p>
-            <p className="font-serif uppercase tracking-[0.1em] text-2xl md:text-3xl font-bold flex justify-center items-baseline gap-2 md:gap-3">
-              <span className="text-5xl md:text-6xl">12</span>
-              <span>Septembre 2026</span>
-            </p>
-          </div>
+          <p
+            className="font-serif uppercase tracking-[0.15em] md:tracking-[0.25em] text-xl md:text-2xl font-bold mb-4 flex items-baseline justify-center gap-1.5 md:gap-2"
+            style={{ color: 'var(--color-wedding-accent)' }}
+          >
+            <span>Samedi</span>
+            <span className="text-3xl md:text-4xl">12</span>
+            <span>Septembre 2026</span>
+          </p>
           <p
             className="font-script mb-5"
             style={{ fontSize: 'clamp(2.5rem, 6vw, 3.5rem)', color: 'var(--color-wedding-accent)' }}
