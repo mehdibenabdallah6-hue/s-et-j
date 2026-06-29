@@ -102,12 +102,29 @@ const events = [
 export default function Timeline() {
   return (
     <section id="programme" className="py-24 md:py-44 relative overflow-hidden">
+      {/* Soft gradient transition from previous section */}
+      <div
+        className="absolute top-0 left-0 right-0 h-32 pointer-events-none z-10"
+        style={{ background: 'linear-gradient(to bottom, var(--color-wedding-bg), transparent)' }}
+      />
+      <div
+        className="absolute bottom-0 left-0 right-0 h-32 pointer-events-none z-10"
+        style={{ background: 'linear-gradient(to top, var(--color-wedding-bg), transparent)' }}
+      />
+
+      {/* Ornamental top divider */}
+      <div className="absolute top-10 left-1/2 -translate-x-1/2 z-20 flex items-center gap-4 opacity-30">
+        <span className="block h-px w-16 md:w-24" style={{ backgroundColor: 'var(--color-wedding-gold)' }} />
+        <span style={{ color: 'var(--color-wedding-gold)', fontSize: '0.7rem' }}>✦</span>
+        <span className="block h-px w-16 md:w-24" style={{ backgroundColor: 'var(--color-wedding-gold)' }} />
+      </div>
+
       {/* Background Image */}
       <div
         className="absolute inset-0 pointer-events-none opacity-[0.25] mix-blend-multiply"
         style={{
           backgroundImage: 'url(/bg-programme.png)',
-          backgroundSize: '100% 100%', // Force l'image à toucher les bords sans rogner
+          backgroundSize: '100% 100%',
           backgroundPosition: 'center',
           backgroundRepeat: 'no-repeat'
         }}
