@@ -227,9 +227,6 @@ export default function RSVP() {
                       </>
                     )}
                   </button>
-                  <p className="mt-5 uppercase tracking-[0.2em] text-[9px] font-serif" style={{ color: 'var(--color-wedding-illustration)' }}>
-                    Merci de répondre avant le 1er Août 2026
-                  </p>
                 </div>
               </motion.form>
             )}
