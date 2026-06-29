@@ -6,7 +6,25 @@ export default function Location() {
   const [mapLoaded, setMapLoaded] = useState(false);
 
   return (
-    <section id="lieu" className="py-32 md:py-44 relative" style={{ backgroundColor: 'rgba(255,255,255,0.25)' }}>
+    <section id="lieu" className="py-32 md:py-44 relative overflow-hidden">
+      {/* Background image — same as hero */}
+      <div
+        className="absolute inset-0 pointer-events-none opacity-[0.15]"
+        style={{
+          backgroundImage: "url('/bg-hero.png')",
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+        }}
+      />
+      {/* Soft gradient overlays for readability */}
+      <div
+        className="absolute top-0 left-0 right-0 h-40 pointer-events-none"
+        style={{ background: 'linear-gradient(to bottom, var(--color-wedding-bg), transparent)' }}
+      />
+      <div
+        className="absolute bottom-0 left-0 right-0 h-40 pointer-events-none"
+        style={{ background: 'linear-gradient(to top, var(--color-wedding-bg), transparent)' }}
+      />
       {/* Top border */}
       <div className="absolute top-0 left-0 right-0 h-px" style={{ background: 'linear-gradient(to right, transparent, rgba(154,142,120,0.25), transparent)' }} />
       <div className="absolute bottom-0 left-0 right-0 h-px" style={{ background: 'linear-gradient(to right, transparent, rgba(154,142,120,0.25), transparent)' }} />

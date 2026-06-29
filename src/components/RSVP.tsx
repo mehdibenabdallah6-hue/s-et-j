@@ -7,7 +7,7 @@ const labelClass = "block uppercase tracking-[0.2em] text-[11px] md:text-xs font
 
 export default function RSVP() {
   const [status, setStatus] = useState<'idle' | 'submitting' | 'success'>('idle');
-  const [formData, setFormData] = useState({ name: '', email: '', presence: '', guests: '1', allergies: '' });
+  const [formData, setFormData] = useState({ name: '', email: '', presence: '', guests: '1' });
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     setFormData(prev => ({ ...prev, [e.target.name]: e.target.value }));
@@ -21,7 +21,7 @@ export default function RSVP() {
     const body = encodeURIComponent(
       `Bonjour,\n\nRSVP pour le mariage de Selma & Jamil :\n\n` +
       `Nom : ${formData.name}\nEmail : ${formData.email}\nPrésence : ${presenceText}\n` +
-      `Nombre d'invités : ${formData.guests}\nAllergies : ${formData.allergies || 'Aucun'}\n\nCordialement,\n${formData.name}`
+      `Nombre d'invités : ${formData.guests}\n\nCordialement,\n${formData.name}`
     );
     window.open(`mailto:contact@selma-jamil-mariage.ma?subject=${subject}&body=${body}`, '_blank');
     setTimeout(() => setStatus('success'), 900);
@@ -38,9 +38,7 @@ export default function RSVP() {
           transition={{ duration: 0.8 }}
           className="text-center mb-10"
         >
-          <p className="uppercase tracking-[0.2em] md:tracking-[0.3em] text-[11px] md:text-xs font-serif mb-3" style={{ color: 'var(--color-wedding-illustration)' }}>
-            Répondez s'il vous plaît
-          </p>
+
           <h2 className="font-script" style={{ fontSize: 'clamp(3rem, 8vw, 5rem)', color: 'var(--color-wedding-accent)' }}>
             RSVP
           </h2>
@@ -179,19 +177,7 @@ export default function RSVP() {
                   </select>
                 </div>
 
-                {/* Allergies */}
-                <div>
-                  <label htmlFor="rsvp-allergies" className={labelClass} style={{ color: 'var(--color-wedding-illustration)' }}>Allergies / Régime alimentaire</label>
-                  <textarea
-                    id="rsvp-allergies" name="allergies" rows={1}
-                    value={formData.allergies} onChange={handleChange}
-                    placeholder="Précisez si nécessaire…"
-                    className={inputClass + ' resize-none'}
-                    style={{ borderBottom: '1px solid rgba(154,142,120,0.35)', color: 'var(--color-wedding-accent)' }}
-                    onFocus={e => e.target.style.borderBottomColor = 'var(--color-wedding-accent)'}
-                    onBlur={e => e.target.style.borderBottomColor = 'rgba(154,142,120,0.35)'}
-                  />
-                </div>
+
 
                 {/* Submit */}
                 <div className="pt-4 text-center">
@@ -227,23 +213,7 @@ export default function RSVP() {
           </AnimatePresence>
         </motion.div>
 
-        {/* Dress Code */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8, delay: 0.2 }}
-          className="mt-20 text-center pt-12"
-          style={{ borderTop: '1px solid rgba(154,142,120,0.2)' }}
-        >
-          <p className="uppercase tracking-[0.3em] text-[10px] font-serif mb-3" style={{ color: 'var(--color-wedding-illustration)' }}>
-            Dress Code
-          </p>
-          <h3 className="font-script text-4xl mb-3" style={{ color: 'var(--color-wedding-accent)' }}>Tenue de soirée</h3>
-          <p className="font-serif text-sm tracking-wide" style={{ color: 'var(--color-wedding-illustration)' }}>
-            Tenue élégante ou traditionnelle marocaine
-          </p>
-        </motion.div>
+
       </div>
     </section>
   );
