@@ -122,18 +122,24 @@ export default function Hero() {
           <div className="absolute inset-0 rounded-3xl opacity-60" style={{ background: 'linear-gradient(135deg, rgba(154,142,120,0.7), rgba(255,255,255,0.2), rgba(154,142,120,0.7))' }} />
           
           <div 
-            className="relative px-6 py-6 md:px-16 md:py-8 text-center rounded-3xl"
+            className="relative px-8 py-8 md:px-20 md:py-10 text-center rounded-3xl"
             style={{ 
-              backgroundColor: 'rgba(255, 255, 255, 0.75)',
-              backdropFilter: 'blur(16px)',
+              backgroundColor: 'rgba(255, 255, 255, 0.85)',
+              backdropFilter: 'blur(20px)',
               boxShadow: 'inset 0 0 20px rgba(255,255,255,0.5)'
             }}
           >
             <p
-              className="font-serif uppercase tracking-[0.1em] md:tracking-[0.2em] text-[15px] md:text-lg font-bold mb-4"
+              className="font-serif uppercase tracking-[0.1em] md:tracking-[0.2em] text-xl md:text-2xl font-bold mb-4"
               style={{ color: 'var(--color-wedding-accent)' }}
             >
-              Samedi 12 Septembre 2026 <span className="text-[var(--color-wedding-gold)] mx-2 md:mx-4 opacity-80" style={{ fontSize: '0.8em' }}>✦</span> 17h00
+              Samedi 12 Septembre 2026
+            </p>
+            <p
+              className="font-script mb-4"
+              style={{ fontSize: 'clamp(2rem, 5vw, 3rem)', color: 'var(--color-wedding-accent)' }}
+            >
+              17h00
             </p>
             
             <div className="flex items-center justify-center gap-2 mb-4 opacity-40">

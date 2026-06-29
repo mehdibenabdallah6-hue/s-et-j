@@ -13,7 +13,7 @@ export default function Location() {
         style={{
           backgroundImage: "url('/bg-hero.png')",
           backgroundSize: 'cover',
-          backgroundPosition: 'center',
+          backgroundPosition: 'center bottom',
         }}
       />
       {/* Soft gradient overlays for readability */}
