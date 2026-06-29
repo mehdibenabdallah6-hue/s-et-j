@@ -70,16 +70,7 @@ export default function Hero() {
         style={{ y: contentY, opacity }}
         className="relative z-10 flex flex-col items-center text-center px-6 -mt-16"
       >
-        {/* Pre-title */}
-        <motion.p
-          initial={{ opacity: 0, letterSpacing: '0.1em' }}
-          animate={{ opacity: 1, letterSpacing: '0.35em' }}
-          transition={{ duration: 1.2, delay: 0.3, ease: 'easeOut' }}
-          className="uppercase text-[11px] md:text-xs font-serif mb-8"
-          style={{ color: 'var(--color-wedding-illustration)' }}
-        >
-          Vous êtes invités
-        </motion.p>
+        {/* Pre-title removed */}
 
         {/* Names */}
         <div className="overflow-visible py-2 px-4">
@@ -132,13 +123,13 @@ export default function Hero() {
           style={{ borderColor: 'rgba(154,142,120,0.3)' }}
         >
           <p
-            className="font-serif uppercase tracking-[0.2em] md:tracking-[0.25em] text-xs md:text-sm mb-2"
+            className="font-serif uppercase tracking-[0.15em] md:tracking-[0.2em] text-sm md:text-base font-semibold mb-3"
             style={{ color: 'var(--color-wedding-accent)' }}
           >
             Samedi 12 Septembre 2026 — 17h00
           </p>
           <p
-            className="font-serif text-[11px] md:text-sm tracking-[0.05em] md:tracking-[0.1em]"
+            className="font-serif text-sm md:text-base tracking-[0.05em] md:tracking-[0.1em]"
             style={{ color: 'var(--color-wedding-illustration)' }}
           >
             12 Rue des Marguerites, Anfa, Casablanca

@@ -59,26 +59,6 @@ export default function Location() {
               </p>
             </div>
 
-            {/* Details */}
-            <div className="space-y-3 mb-10">
-              {[
-                { label: 'Date', value: 'Samedi 12 Septembre 2026' },
-                { label: 'Heure', value: '17h00' },
-                { label: 'Tenue', value: 'Soirée élégante' },
-              ].map(({ label, value }) => (
-                <div key={label} className="flex items-baseline gap-3 justify-center md:justify-start">
-                  <span
-                    className="font-serif uppercase tracking-[0.2em] text-[11px] md:text-xs"
-                    style={{ color: 'var(--color-wedding-illustration)' }}
-                  >
-                    {label}
-                  </span>
-                  <span className="block flex-1 h-px opacity-20" style={{ backgroundColor: 'var(--color-wedding-illustration)' }} />
-                  <span className="font-serif text-sm" style={{ color: 'var(--color-wedding-accent)' }}>{value}</span>
-                </div>
-              ))}
-            </div>
-
             {/* CTA */}
             <a
               href="https://maps.google.com/?q=33.5882,-7.6614"

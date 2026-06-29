@@ -82,7 +82,7 @@ export default function Invitation() {
           custom={0.15}
         >
           <p
-            className="font-serif uppercase tracking-[0.2em] md:tracking-[0.25em] text-xs md:text-sm mb-2 md:mb-3"
+            className="font-serif text-sm md:text-base font-medium mb-2 md:mb-3"
             style={{ color: 'var(--color-wedding-accent)' }}
           >
             Leila & Karim Benabdallah

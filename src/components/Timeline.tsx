@@ -26,7 +26,7 @@ const events = [
   },
   { 
     time: '19H00', 
-    title: 'Famille du marié', 
+    title: 'Accueil de la famille du marié', 
     icon: (
       <svg viewBox="0 0 100 100" className="w-8 h-8" fill="none" stroke="currentColor" strokeWidth="1.5">
         <path d="M35,63 C30,48 35,38 50,38 C65,38 70,48 65,63 C60,70 40,70 35,63 Z" />
