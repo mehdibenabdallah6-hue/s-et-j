@@ -13,18 +13,40 @@ export default function RSVP() {
     setFormData(prev => ({ ...prev, [e.target.name]: e.target.value }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setStatus('submitting');
     const presenceText = formData.presence === 'oui' ? 'Oui, avec joie ✓' : 'Non, avec regret ✗';
-    const subject = encodeURIComponent(`RSVP Mariage S&J — ${formData.name}`);
-    const body = encodeURIComponent(
-      `Bonjour,\n\nRSVP pour le mariage de Selma & Jamil :\n\n` +
-      `Nom : ${formData.name}\nEmail : ${formData.email}\nPrésence : ${presenceText}\n` +
-      `Nombre d'invités : ${formData.guests}\n\nCordialement,\n${formData.name}`
-    );
-    window.open(`mailto:contact@selma-jamil-mariage.ma?subject=${subject}&body=${body}`, '_blank');
-    setTimeout(() => setStatus('success'), 900);
+
+    try {
+      const res = await fetch('https://formsubmit.co/ajax/selma.benabdallah9@gmail.com', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        body: JSON.stringify({
+          _subject: `RSVP Mariage S&J — ${formData.name}`,
+          Nom: formData.name,
+          Email: formData.email,
+          'Présence': presenceText,
+          "Nombre d'invités": formData.guests,
+          _template: 'table',
+        }),
+      });
+      if (res.ok) {
+        setStatus('success');
+      } else {
+        throw new Error('Erreur');
+      }
+    } catch {
+      // Fallback to mailto if the service fails
+      const subject = encodeURIComponent(`RSVP Mariage S&J — ${formData.name}`);
+      const body = encodeURIComponent(
+        `Bonjour,\n\nRSVP pour le mariage de Selma & Jamil :\n\n` +
+        `Nom : ${formData.name}\nEmail : ${formData.email}\nPrésence : ${presenceText}\n` +
+        `Nombre d'invités : ${formData.guests}\n\nCordialement,\n${formData.name}`
+      );
+      window.open(`mailto:selma.benabdallah9@gmail.com?subject=${subject}&body=${body}`, '_blank');
+      setStatus('success');
+    }
   };
 
   return (
