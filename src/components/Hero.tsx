@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion, useScroll, useTransform } from 'motion/react';
 import { ChevronDown } from 'lucide-react';
+import Countdown from './Countdown';
 
 export default function Hero() {
   const { scrollY } = useScroll();
@@ -147,6 +148,8 @@ export default function Hero() {
             >
               12 Rue des Marguerites, Anfa, Casablanca
             </p>
+
+            <Countdown />
           </div>
         </motion.div>
       </motion.div>

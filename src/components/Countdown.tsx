@@ -28,14 +28,14 @@ function useCountdown() {
 // ✅ FIX: height et width utilisent le même clamp que le font-size → plus de coupure
 function Digit({ value }: { value: number }) {
   const str = String(value).padStart(2, '0');
-  const fontSize = 'clamp(2.8rem, 7vw, 4.5rem)';
+  const fontSize = 'clamp(1.2rem, 3vw, 1.6rem)';
   return (
     <div
       style={{
         position: 'relative',
         // height doit contenir le texte → on force une valeur basée sur le font-size réel
-        height: 'clamp(3.4rem, 8.5vw, 5.5rem)',
-        width: 'clamp(3.5rem, 8vw, 5.5rem)',
+        height: 'clamp(1.5rem, 4vw, 2rem)',
+        width: 'clamp(2rem, 5vw, 2.5rem)',
         overflow: 'hidden',
       }}
     >
@@ -73,89 +73,52 @@ export default function Countdown() {
   const time = useCountdown();
 
   return (
-    <section className="py-24 md:py-32 relative overflow-hidden" style={{ backgroundColor: 'var(--color-wedding-bg)' }}>
-      {/* Background texture */}
-      <div
-        className="absolute inset-0 opacity-5 pointer-events-none"
-        style={{
-          backgroundImage: 'radial-gradient(circle, var(--color-wedding-illustration) 1px, transparent 1px)',
-          backgroundSize: '32px 32px',
-        }}
-      />
-
-      <div className="container mx-auto px-6 relative">
-        {/* Header */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
-          className="text-center mb-14"
-        >
-          <p className="uppercase tracking-[0.2em] md:tracking-[0.3em] text-[11px] md:text-xs font-serif mb-3" style={{ color: 'var(--color-wedding-illustration)' }}>
-            Compte à rebours
-          </p>
-          <h2 className="font-script" style={{ fontSize: 'clamp(3rem, 8vw, 5rem)', color: 'var(--color-wedding-accent)' }}>
-            Le Jour J
-          </h2>
-          <div className="flex items-center justify-center gap-4 mt-5 opacity-30">
-            <span className="block h-px w-12" style={{ backgroundColor: 'var(--color-wedding-gold)' }} />
-            <span style={{ color: 'var(--color-wedding-gold)' }}>✦</span>
-            <span className="block h-px w-12" style={{ backgroundColor: 'var(--color-wedding-gold)' }} />
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.8, delay: 1.5 }}
+      className="flex flex-wrap justify-center items-center mt-6 gap-3 md:gap-6"
+    >
+      {units.map((unit, i) => (
+        <React.Fragment key={unit}>
+          {/* Digit block */}
+          <div className="flex flex-col items-center">
+            <div 
+              className="w-12 h-12 md:w-16 md:h-16 flex items-center justify-center rounded-full mb-2"
+              style={{
+                backgroundColor: 'rgba(255,255,255,0.4)',
+                border: '1px solid rgba(154,142,120,0.2)',
+                boxShadow: 'inset 0 0 10px rgba(255,255,255,0.5)'
+              }}
+            >
+              <Digit value={time[unit]} />
+            </div>
+            <span
+              className="uppercase font-serif"
+              style={{
+                color: 'var(--color-wedding-accent)',
+                letterSpacing: '0.15em',
+                fontSize: '0.5rem',
+              }}
+            >
+              {unit}
+            </span>
           </div>
-        </motion.div>
 
-        {/* Digits */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-          className="flex flex-wrap justify-center items-center"
-          style={{ gap: '0 clamp(0.5rem, 2vw, 1.5rem)' }}
-        >
-          {units.map((unit, i) => (
-            <React.Fragment key={unit}>
-              {/* Digit card */}
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: i * 0.1 + 0.2 }}
-                className="flex flex-col items-center"
-                style={{ padding: 'clamp(0.75rem, 2vw, 1.5rem) clamp(0.5rem, 2vw, 2rem)' }}
-              >
-                <Digit value={time[unit]} />
-                <span
-                  className="uppercase font-serif mt-3"
-                  style={{
-                    color: 'var(--color-wedding-illustration)',
-                    letterSpacing: '0.25em',
-                    fontSize: 'clamp(0.65rem, 1.5vw, 0.75rem)',
-                  }}
-                >
-                  {unit}
-                </span>
-              </motion.div>
-
-              {/* Colon separator — not after last */}
-              {i < units.length - 1 && (
-                <span
-                  className="font-serif font-light opacity-30 self-center"
-                  style={{
-                    color: 'var(--color-wedding-illustration)',
-                    fontSize: 'clamp(1.5rem, 4vw, 2.5rem)',
-                    // align with the digit center
-                    marginBottom: '1.5rem',
-                  }}
-                >
-                  :
-                </span>
-              )}
-            </React.Fragment>
-          ))}
-        </motion.div>
-      </div>
-    </section>
+          {/* Separator */}
+          {i < units.length - 1 && (
+            <span
+              className="font-serif font-light opacity-40 self-start mt-2 md:mt-3"
+              style={{
+                color: 'var(--color-wedding-accent)',
+                fontSize: '1.2rem',
+              }}
+            >
+              :
+            </span>
+          )}
+        </React.Fragment>
+      ))}
+    </motion.div>
   );
 }

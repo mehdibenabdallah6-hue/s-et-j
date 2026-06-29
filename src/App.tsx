@@ -24,7 +24,7 @@ export default function App() {
       <main>
         <Hero />
         <Invitation />
-        <Countdown />
+
         <Timeline />
         <Location />
         <RSVP />
