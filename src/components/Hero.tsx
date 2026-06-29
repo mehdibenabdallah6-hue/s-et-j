@@ -120,8 +120,8 @@ export default function Hero() {
           <div 
             className="relative px-8 py-8 md:px-20 md:py-10 text-center rounded-3xl"
             style={{ 
-              backgroundColor: 'var(--color-wedding-accent)',
-              boxShadow: '0 25px 50px rgba(92,96,72,0.3)'
+              backgroundColor: '#8A9A86', // Vert sauge
+              boxShadow: '0 25px 50px rgba(138,154,134,0.3)'
             }}
           >
             <p
