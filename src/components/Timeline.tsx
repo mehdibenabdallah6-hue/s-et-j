@@ -5,6 +5,7 @@ const events = [
   { 
     time: '17H00', 
     title: 'Accueil des invités', 
+    image: '/invites.png',
     icon: (
       <svg viewBox="0 0 100 100" className="w-8 h-8" fill="none" stroke="currentColor" strokeWidth="1.5">
         <g transform="rotate(12 50 50)">
@@ -55,6 +56,7 @@ const events = [
   { 
     time: '22H00', 
     title: 'Doura', 
+    image: '/doura.png',
     icon: (
       <svg viewBox="0 0 100 100" className="w-8 h-8" fill="none" stroke="currentColor" strokeWidth="1.5">
         <line x1="12" y1="68" x2="88" y2="68" />
@@ -69,6 +71,7 @@ const events = [
   { 
     time: '23H00', 
     title: 'Dîner', 
+    image: '/dinner.png',
     icon: (
       <svg viewBox="0 0 100 100" className="w-8 h-8" fill="none" stroke="currentColor" strokeWidth="1.5">
         <path d="M15,72 C15,77 85,77 85,72 Z" />
@@ -82,6 +85,7 @@ const events = [
   { 
     time: '00H30', 
     title: 'Robe Blanche', 
+    image: '/robe.png',
     icon: (
       <svg viewBox="0 0 100 100" className="w-8 h-8" fill="none" stroke="currentColor" strokeWidth="1.5">
         <path d="M45,28 C45,23 55,23 55,28 L50,30 Z" />
@@ -150,15 +154,21 @@ export default function Timeline() {
                   className="relative grid grid-cols-2 gap-0 items-center"
                 >
                   {/* Left content */}
-                  <div className={`flex justify-end py-6 md:py-10 pr-6 md:pr-16 ${!isLeft ? 'invisible' : ''}`}>
-                    <div className="text-right max-w-[160px] md:max-w-none">
-                      <p className="font-serif uppercase tracking-[0.1em] md:tracking-[0.22em] text-[9px] md:text-xs font-semibold mb-1 md:mb-2" style={{ color: 'var(--color-wedding-accent)' }}>
-                        {event.time}
-                      </p>
-                      <p className="font-script text-[1.4rem] md:text-3xl leading-none" style={{ color: 'var(--color-wedding-illustration)' }}>
-                        {event.title}
-                      </p>
-                    </div>
+                  <div className={`flex items-center justify-end py-6 md:py-10 pr-6 md:pr-16`}>
+                    {isLeft ? (
+                      <div className="text-right max-w-[160px] md:max-w-none">
+                        <p className="font-serif uppercase tracking-[0.1em] md:tracking-[0.22em] text-[9px] md:text-xs font-semibold mb-1 md:mb-2" style={{ color: 'var(--color-wedding-accent)' }}>
+                          {event.time}
+                        </p>
+                        <p className="font-script text-[1.4rem] md:text-3xl leading-none" style={{ color: 'var(--color-wedding-illustration)' }}>
+                          {event.title}
+                        </p>
+                      </div>
+                    ) : event.image ? (
+                      <div className="flex justify-center opacity-90 mix-blend-multiply w-24 md:w-32">
+                        <img src={event.image} alt="" className="object-contain" />
+                      </div>
+                    ) : null}
                   </div>
 
                   {/* Center illustration badge */}
@@ -179,15 +189,21 @@ export default function Timeline() {
                   </div>
 
                   {/* Right content */}
-                  <div className={`flex justify-start py-6 md:py-10 pl-6 md:pl-16 ${isLeft ? 'invisible' : ''}`}>
-                    <div className="text-left max-w-[160px] md:max-w-none">
-                      <p className="font-serif uppercase tracking-[0.1em] md:tracking-[0.22em] text-[9px] md:text-xs font-semibold mb-1 md:mb-2" style={{ color: 'var(--color-wedding-accent)' }}>
-                        {event.time}
-                      </p>
-                      <p className="font-script text-[1.4rem] md:text-3xl leading-none" style={{ color: 'var(--color-wedding-illustration)' }}>
-                        {event.title}
-                      </p>
-                    </div>
+                  <div className={`flex items-center justify-start py-6 md:py-10 pl-6 md:pl-16`}>
+                    {!isLeft ? (
+                      <div className="text-left max-w-[160px] md:max-w-none">
+                        <p className="font-serif uppercase tracking-[0.1em] md:tracking-[0.22em] text-[9px] md:text-xs font-semibold mb-1 md:mb-2" style={{ color: 'var(--color-wedding-accent)' }}>
+                          {event.time}
+                        </p>
+                        <p className="font-script text-[1.4rem] md:text-3xl leading-none" style={{ color: 'var(--color-wedding-illustration)' }}>
+                          {event.title}
+                        </p>
+                      </div>
+                    ) : event.image ? (
+                      <div className="flex justify-center opacity-90 mix-blend-multiply w-24 md:w-32">
+                        <img src={event.image} alt="" className="object-contain" />
+                      </div>
+                    ) : null}
                   </div>
                 </motion.div>
               );
