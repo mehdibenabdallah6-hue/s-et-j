@@ -73,20 +73,18 @@ export default function Hero() {
         {/* Pre-title removed */}
 
         {/* Names */}
-        <div className="overflow-visible py-2 px-4">
-          <motion.h1
-            initial={{ y: 80, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            transition={{ duration: 1, delay: 0.5, ease: [0.16, 1, 0.3, 1] }}
-            className="font-script leading-none"
-            style={{
-              fontSize: 'clamp(4.5rem, 14vw, 9.5rem)',
-              color: 'var(--color-wedding-accent)',
-            }}
-          >
-            Selma
-          </motion.h1>
-        </div>
+        <motion.h1
+          initial={{ y: 80, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ duration: 1, delay: 0.5, ease: [0.16, 1, 0.3, 1] }}
+          className="font-script leading-none py-2 px-4 overflow-visible"
+          style={{
+            fontSize: 'clamp(4.5rem, 14vw, 9.5rem)',
+            color: 'var(--color-wedding-accent)',
+          }}
+        >
+          Selma
+        </motion.h1>
 
         <motion.div
           initial={{ opacity: 0, scaleX: 0 }}
@@ -99,20 +97,18 @@ export default function Hero() {
           <span className="block h-px w-12 opacity-40" style={{ backgroundColor: 'var(--color-wedding-gold)' }} />
         </motion.div>
 
-        <div className="overflow-visible py-2 px-4">
-          <motion.h1
-            initial={{ y: 80, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            transition={{ duration: 1, delay: 0.7, ease: [0.16, 1, 0.3, 1] }}
-            className="font-script leading-none"
-            style={{
-              fontSize: 'clamp(4.5rem, 14vw, 9.5rem)',
-              color: 'var(--color-wedding-accent)',
-            }}
-          >
-            Jamil
-          </motion.h1>
-        </div>
+        <motion.h1
+          initial={{ y: 80, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ duration: 1, delay: 0.7, ease: [0.16, 1, 0.3, 1] }}
+          className="font-script leading-none py-2 px-4 overflow-visible"
+          style={{
+            fontSize: 'clamp(4.5rem, 14vw, 9.5rem)',
+            color: 'var(--color-wedding-accent)',
+          }}
+        >
+          Jamil
+        </motion.h1>
 
         {/* Date & Location */}
         <motion.div
