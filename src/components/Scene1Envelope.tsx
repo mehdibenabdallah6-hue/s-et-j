@@ -58,9 +58,11 @@ export default function Scene1Envelope({ onOpen }: Scene1EnvelopeProps) {
     >
       <video
         ref={videoRef}
-        className="absolute inset-0 w-full h-full object-cover"
-        src="/envelope-intro.mp4"
+        className="absolute inset-0 w-full h-full object-contain md:object-cover"
+        src="/envelope-intro.mp4#t=0.001"
+        preload="metadata"
         playsInline
+        muted={!isPlaying} // On garde muted au début pour forcer iOS à précharger la frame
         onTimeUpdate={handleTimeUpdate}
         onEnded={handleVideoEnd}
       />
