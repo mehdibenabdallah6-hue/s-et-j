@@ -111,46 +111,41 @@ export default function Hero() {
           Jamil
         </motion.h1>
 
-        {/* Date & Location */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 1.1 }}
-          className="mt-12 relative p-[1px] rounded-3xl mx-4 md:mx-0 shadow-xl"
+          className="mt-12 relative rounded-3xl mx-4 md:mx-0 shadow-2xl"
         >
-          {/* Subtle gradient border effect */}
-          <div className="absolute inset-0 rounded-3xl opacity-60" style={{ background: 'linear-gradient(135deg, rgba(154,142,120,0.7), rgba(255,255,255,0.2), rgba(154,142,120,0.7))' }} />
-          
           <div 
             className="relative px-8 py-8 md:px-20 md:py-10 text-center rounded-3xl"
             style={{ 
-              backgroundColor: 'rgba(255, 255, 255, 0.85)',
-              backdropFilter: 'blur(20px)',
-              boxShadow: 'inset 0 0 20px rgba(255,255,255,0.5)'
+              backgroundColor: 'var(--color-wedding-accent)',
+              boxShadow: '0 25px 50px rgba(92,96,72,0.3)'
             }}
           >
             <p
               className="font-serif uppercase tracking-[0.1em] md:tracking-[0.2em] text-xl md:text-2xl font-bold mb-4"
-              style={{ color: 'var(--color-wedding-accent)' }}
+              style={{ color: 'var(--color-wedding-bg)' }}
             >
               Samedi 12 Septembre 2026
             </p>
             <p
               className="font-script mb-4"
-              style={{ fontSize: 'clamp(2rem, 5vw, 3rem)', color: 'var(--color-wedding-accent)' }}
+              style={{ fontSize: 'clamp(2rem, 5vw, 3rem)', color: 'var(--color-wedding-bg)' }}
             >
               17h00
             </p>
             
-            <div className="flex items-center justify-center gap-2 mb-4 opacity-40">
-              <span className="w-12 md:w-20 h-px bg-[var(--color-wedding-gold)]"></span>
-              <span className="w-1 h-1 rounded-full bg-[var(--color-wedding-gold)]"></span>
-              <span className="w-12 md:w-20 h-px bg-[var(--color-wedding-gold)]"></span>
+            <div className="flex items-center justify-center gap-2 mb-4 opacity-30">
+              <span className="w-12 md:w-20 h-px" style={{ backgroundColor: 'var(--color-wedding-bg)' }}></span>
+              <span className="w-1 h-1 rounded-full" style={{ backgroundColor: 'var(--color-wedding-bg)' }}></span>
+              <span className="w-12 md:w-20 h-px" style={{ backgroundColor: 'var(--color-wedding-bg)' }}></span>
             </div>
 
             <p
               className="font-serif text-[13px] md:text-base tracking-[0.05em] md:tracking-[0.15em] font-medium"
-              style={{ color: 'var(--color-wedding-accent)' }}
+              style={{ color: 'rgba(243,237,226,0.8)' }}
             >
               12 Rue des Marguerites, Anfa, Casablanca
             </p>
