@@ -38,13 +38,10 @@ export default function Location() {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <p className="uppercase tracking-[0.2em] md:tracking-[0.3em] text-[11px] md:text-xs font-serif mb-3" style={{ color: 'var(--color-wedding-illustration)' }}>
-            Où nous rejoindre
-          </p>
           <h2 className="font-script" style={{ fontSize: 'clamp(3rem, 8vw, 5rem)', color: 'var(--color-wedding-accent)' }}>
-            Le Lieu
+            Lieu de réception
           </h2>
-          <div className="flex items-center justify-center gap-4 mt-5 opacity-30">
+          <div className="flex items-center justify-center gap-4 mt-8 opacity-30">
             <span className="block h-px w-12" style={{ backgroundColor: 'var(--color-wedding-gold)' }} />
             <span style={{ color: 'var(--color-wedding-gold)' }}>✦</span>
             <span className="block h-px w-12" style={{ backgroundColor: 'var(--color-wedding-gold)' }} />
