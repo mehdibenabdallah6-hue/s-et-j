@@ -119,18 +119,22 @@ export default function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 1.1 }}
-          className="mt-10 pt-7 border-t text-center"
-          style={{ borderColor: 'rgba(154,142,120,0.3)' }}
+          className="mt-12 px-6 py-5 md:px-12 md:py-6 text-center border-y"
+          style={{ 
+            borderColor: 'rgba(154,142,120,0.4)',
+            backgroundColor: 'rgba(255, 255, 255, 0.5)',
+            backdropFilter: 'blur(8px)'
+          }}
         >
           <p
-            className="font-serif uppercase tracking-[0.15em] md:tracking-[0.2em] text-sm md:text-base font-semibold mb-3"
+            className="font-serif uppercase tracking-[0.15em] md:tracking-[0.2em] text-base md:text-xl font-bold mb-3"
             style={{ color: 'var(--color-wedding-accent)' }}
           >
-            Samedi 12 Septembre 2026 — 17h00
+            Samedi 12 Septembre 2026 <span className="opacity-40 mx-2">—</span> 17h00
           </p>
           <p
-            className="font-serif text-sm md:text-base tracking-[0.05em] md:tracking-[0.1em]"
-            style={{ color: 'var(--color-wedding-illustration)' }}
+            className="font-serif text-sm md:text-base tracking-[0.05em] md:tracking-[0.1em] font-medium"
+            style={{ color: 'var(--color-wedding-accent)' }}
           >
             12 Rue des Marguerites, Anfa, Casablanca
           </p>
