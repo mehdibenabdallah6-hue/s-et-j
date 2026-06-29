@@ -9,11 +9,10 @@ export default function Location() {
     <section id="lieu" className="py-32 md:py-44 relative overflow-hidden">
       {/* Background image — same as hero */}
       <div
-        className="absolute inset-0 pointer-events-none opacity-[0.15]"
+        className="absolute inset-0 pointer-events-none opacity-[0.15] bg-[center_top] md:bg-[center_bottom]"
         style={{
           backgroundImage: "url('/bg-hero.png')",
           backgroundSize: 'cover',
-          backgroundPosition: 'center bottom',
         }}
       />
       {/* Soft gradient overlays for readability */}
