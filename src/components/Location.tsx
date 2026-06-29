@@ -1,8 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { motion } from 'motion/react';
 import { MapPin, Navigation as NavIcon } from 'lucide-react';
 
 export default function Location() {
+  const [mapLoaded, setMapLoaded] = useState(false);
+
   return (
     <section id="lieu" className="py-24 md:py-36 relative" style={{ backgroundColor: 'rgba(255,255,255,0.25)' }}>
       {/* Top border */}
@@ -91,12 +93,21 @@ export default function Location() {
           >
             {/* Frame */}
             <div
-              className="absolute inset-0 rounded-sm overflow-hidden"
+              className="absolute inset-0 rounded-sm overflow-hidden flex items-center justify-center"
               style={{
                 border: '1px solid rgba(154,142,120,0.25)',
                 boxShadow: '0 20px 60px rgba(92,96,72,0.12)',
+                backgroundColor: 'var(--color-wedding-bg)',
               }}
             >
+              {/* Loader */}
+              {!mapLoaded && (
+                <div className="absolute inset-0 flex flex-col items-center justify-center opacity-60 z-0">
+                  <div className="w-8 h-8 rounded-full border-[3px] border-[var(--color-wedding-gold)] border-t-transparent animate-spin mb-4" />
+                  <span className="font-serif text-xs uppercase tracking-[0.2em]" style={{ color: 'var(--color-wedding-illustration)' }}>Chargement...</span>
+                </div>
+              )}
+
               <iframe
                 src="https://maps.google.com/maps?q=33.5882,-7.6614&z=15&output=embed&hl=fr"
                 width="100%"
@@ -105,8 +116,9 @@ export default function Location() {
                 allowFullScreen={false}
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
-                className="grayscale opacity-85"
+                className={`grayscale transition-opacity duration-1000 relative z-10 ${mapLoaded ? 'opacity-85' : 'opacity-0'}`}
                 title="Anfa, Casablanca — Lieu de réception"
+                onLoad={() => setMapLoaded(true)}
               />
             </div>
             {/* Corner accents */}
