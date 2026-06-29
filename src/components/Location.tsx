@@ -38,7 +38,7 @@ export default function Location() {
           className="text-center mb-16"
         >
           <h2 className="font-script" style={{ fontSize: 'clamp(3rem, 8vw, 5rem)', color: 'var(--color-wedding-accent)' }}>
-            Lieu
+            Lieu de la réception
           </h2>
           <div className="flex items-center justify-center gap-4 mt-8 opacity-30">
             <span className="block h-px w-12" style={{ backgroundColor: 'var(--color-wedding-gold)' }} />
@@ -58,13 +58,6 @@ export default function Location() {
           >
             {/* Address */}
             <div className="mb-8">
-              <p
-                className="font-serif uppercase tracking-[0.25em] text-xs mb-4"
-                style={{ color: 'var(--color-wedding-illustration)' }}
-              >
-                Réception
-              </p>
-              <div className="w-8 h-px mb-6 mx-auto md:mx-0" style={{ backgroundColor: 'var(--color-wedding-gold)', opacity: 0.5 }} />
               <p
                 className="font-serif text-xl leading-relaxed"
                 style={{ color: 'var(--color-wedding-accent)' }}
