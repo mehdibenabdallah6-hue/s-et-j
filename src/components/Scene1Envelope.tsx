@@ -58,7 +58,7 @@ export default function Scene1Envelope({ onOpen }: Scene1EnvelopeProps) {
     >
       <video
         ref={videoRef}
-        className="absolute inset-0 w-full h-full object-contain md:object-cover"
+        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 h-[60vh] w-auto max-w-none md:w-full md:h-full md:object-cover"
         src="/envelope-intro.mp4#t=0.001"
         preload="metadata"
         playsInline
