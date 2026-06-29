@@ -115,41 +115,33 @@ export default function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 1.1 }}
-          className="mt-12 relative rounded-3xl mx-4 md:mx-0 shadow-2xl"
+          className="mt-14 text-center"
         >
-          <div 
-            className="relative px-8 py-8 md:px-20 md:py-10 text-center rounded-3xl"
-            style={{ 
-              backgroundColor: '#8A9A86', // Vert sauge
-              boxShadow: '0 25px 50px rgba(138,154,134,0.3)'
-            }}
+          <p
+            className="font-serif uppercase tracking-[0.15em] md:tracking-[0.25em] text-xl md:text-2xl font-bold mb-4"
+            style={{ color: 'var(--color-wedding-accent)' }}
           >
-            <p
-              className="font-serif uppercase tracking-[0.1em] md:tracking-[0.2em] text-xl md:text-2xl font-bold mb-4"
-              style={{ color: 'var(--color-wedding-bg)' }}
-            >
-              Samedi 12 Septembre 2026
-            </p>
-            <p
-              className="font-script mb-4"
-              style={{ fontSize: 'clamp(2rem, 5vw, 3rem)', color: 'var(--color-wedding-bg)' }}
-            >
-              17h00
-            </p>
-            
-            <div className="flex items-center justify-center gap-2 mb-4 opacity-30">
-              <span className="w-12 md:w-20 h-px" style={{ backgroundColor: 'var(--color-wedding-bg)' }}></span>
-              <span className="w-1 h-1 rounded-full" style={{ backgroundColor: 'var(--color-wedding-bg)' }}></span>
-              <span className="w-12 md:w-20 h-px" style={{ backgroundColor: 'var(--color-wedding-bg)' }}></span>
-            </div>
-
-            <p
-              className="font-serif text-[13px] md:text-base tracking-[0.05em] md:tracking-[0.15em] font-medium"
-              style={{ color: 'rgba(243,237,226,0.8)' }}
-            >
-              12 Rue des Marguerites, Anfa, Casablanca
-            </p>
+            Samedi 12 Septembre 2026
+          </p>
+          <p
+            className="font-script mb-5"
+            style={{ fontSize: 'clamp(2.5rem, 6vw, 3.5rem)', color: 'var(--color-wedding-accent)' }}
+          >
+            17h00
+          </p>
+          
+          <div className="flex items-center justify-center gap-3 mb-5 opacity-40">
+            <span className="w-16 md:w-24 h-px bg-[var(--color-wedding-gold)]"></span>
+            <span className="w-1.5 h-1.5 rounded-full bg-[var(--color-wedding-gold)]"></span>
+            <span className="w-16 md:w-24 h-px bg-[var(--color-wedding-gold)]"></span>
           </div>
+
+          <p
+            className="font-serif text-sm md:text-lg tracking-[0.1em] md:tracking-[0.2em] font-semibold"
+            style={{ color: 'var(--color-wedding-accent)' }}
+          >
+            12 Rue des Marguerites, Anfa, Casablanca
+          </p>
         </motion.div>
 
         {/* Countdown — below the card */}
