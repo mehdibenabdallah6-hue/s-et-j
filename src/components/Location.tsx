@@ -81,7 +81,7 @@ export default function Location() {
 
             {/* CTA */}
             <a
-              href="https://maps.google.com/?q=Anfa,+Casablanca,+Morocco"
+              href="https://maps.google.com/?q=33.5882,-7.6614"
               target="_blank"
               rel="noreferrer"
               className="inline-flex items-center gap-3 border px-7 py-3.5 text-[11px] uppercase tracking-[0.2em] font-serif transition-all duration-300 group"
