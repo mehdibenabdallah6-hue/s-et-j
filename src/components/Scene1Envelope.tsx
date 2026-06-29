@@ -46,7 +46,7 @@ export default function Scene1Envelope({ onOpen }: Scene1EnvelopeProps) {
 
   return (
     <motion.div
-      className="fixed inset-0 z-50 flex items-center justify-center overflow-hidden cursor-pointer bg-[#F3EFE4]"
+      className="fixed inset-0 z-50 flex items-center justify-center overflow-hidden cursor-pointer bg-white"
       animate={{ 
         opacity: isEnded ? 0 : 1,
       }}
@@ -58,7 +58,7 @@ export default function Scene1Envelope({ onOpen }: Scene1EnvelopeProps) {
     >
       <video
         ref={videoRef}
-        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 h-[60vh] w-auto max-w-none md:w-full md:h-full md:object-cover mix-blend-multiply"
+        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 h-[60vh] w-auto max-w-none md:w-full md:h-full md:object-cover"
         src="/envelope-intro.mp4#t=0.001"
         preload="metadata"
         playsInline
@@ -74,8 +74,7 @@ export default function Scene1Envelope({ onOpen }: Scene1EnvelopeProps) {
         transition={{ duration: 0.5 }}
       >
         <motion.p
-          className="uppercase tracking-[0.3em] text-[10px] sm:text-xs font-serif text-white select-none drop-shadow-md"
-          style={{ textShadow: '0 2px 10px rgba(0,0,0,0.5)' }}
+          className="uppercase tracking-[0.3em] text-[10px] sm:text-xs font-serif text-[#5C6048] select-none"
           animate={{ opacity: [0.4, 1, 0.4] }}
           transition={{ repeat: Infinity, duration: 2.5, ease: 'easeInOut' }}
         >
