@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { motion } from 'motion/react';
 
 const fadeUp = {
@@ -7,53 +7,20 @@ const fadeUp = {
 };
 
 export default function Invitation() {
-  const [isMobile, setIsMobile] = useState(false);
-  useEffect(() => {
-    const check = () => setIsMobile(window.innerWidth < 768);
-    check();
-    window.addEventListener('resize', check);
-    return () => window.removeEventListener('resize', check);
-  }, []);
   return (
     <section
       id="invitation"
       className="py-16 md:py-44 relative overflow-hidden"
     >
-      {/* Background image container with aspect-ratio and edge blending */}
+      {/* Background Image */}
       <div
-        className="absolute top-0 bottom-0 left-0 md:left-1/2 md:-translate-x-1/2 bg-no-repeat pointer-events-none"
+        className="absolute inset-0 pointer-events-none opacity-[0.25] mix-blend-multiply"
         style={{
           backgroundImage: "url('/bg-invitation.png')",
-          backgroundSize: isMobile ? 'contain' : 'cover',
+          backgroundSize: '100% 100%',
           backgroundPosition: 'center',
-          ...(isMobile 
-            ? { width: '100%' } 
-            : { 
-                height: '100%', 
-                aspectRatio: '1055/1491',
-              }
-          )
+          backgroundRepeat: 'no-repeat'
         }}
-      >
-        {/* Horizontal edge blending overlays for desktop */}
-        {!isMobile && (
-          <>
-            <div 
-              className="absolute left-0 top-0 bottom-0 pointer-events-none"
-              style={{ width: '8%', background: 'linear-gradient(to right, #F3EDE2, rgba(243,237,226,0))' }}
-            />
-            <div 
-              className="absolute right-0 top-0 bottom-0 pointer-events-none"
-              style={{ width: '8%', background: 'linear-gradient(to left, #F3EDE2, rgba(243,237,226,0))' }}
-            />
-          </>
-        )}
-      </div>
-
-      {/* Overlay */}
-      <div
-        className="absolute inset-0 pointer-events-none"
-        style={{ background: 'linear-gradient(to bottom, rgba(243,237,226,0.45), rgba(243,237,226,0.55))' }}
       />
 
       {/* Decorative corner ornaments */}
