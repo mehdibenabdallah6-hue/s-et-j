@@ -19,16 +19,17 @@ export default function RSVP() {
     const presenceText = formData.presence === 'oui' ? 'Oui, avec joie ✓' : 'Non, avec regret ✗';
 
     try {
-      const res = await fetch('https://formsubmit.co/ajax/selma.benabdallah9@gmail.com', {
+      const res = await fetch('https://api.web3forms.com/submit', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
         body: JSON.stringify({
-          _subject: `RSVP Mariage S&J — ${formData.name}`,
+          access_key: 'f4e75982-d769-4819-938c-963f0befb9c0',
+          subject: `RSVP Mariage S&J — ${formData.name}`,
+          from_name: formData.name,
           Nom: formData.name,
           Email: formData.email,
           'Présence': presenceText,
           "Nombre d'invités": formData.guests,
-          _template: 'table',
         }),
       });
       if (res.ok) {
