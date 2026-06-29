@@ -72,10 +72,12 @@ export default function Navigation() {
           <a
             href="#accueil"
             onClick={(e) => scrollTo(e, '#accueil')}
-            className="md:absolute md:left-6 font-serif text-xl md:text-2xl font-bold tracking-widest transition-opacity hover:opacity-70"
+            className="md:absolute md:left-6 flex items-center gap-2 font-serif text-2xl md:text-3xl transition-opacity hover:opacity-70"
             style={{ color: 'var(--color-wedding-accent)' }}
           >
-            S & J
+            <span>S</span>
+            <span className="text-[0.55em] italic opacity-60">&amp;</span>
+            <span>J</span>
           </a>
 
           {/* Desktop Nav */}
