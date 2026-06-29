@@ -57,25 +57,6 @@ export default function Footer() {
             <span className="block h-px w-12" style={{ backgroundColor: 'var(--color-wedding-bg)' }} />
           </div>
 
-          {/* Quote */}
-          <p
-            className="font-serif text-xl italic mb-12 leading-relaxed"
-            style={{ color: 'rgba(243,237,226,0.85)' }}
-          >
-            "Deux âmes, un seul chemin."
-          </p>
-
-          {/* Contact */}
-          <div className="font-serif" style={{ color: 'rgba(243,237,226,0.45)' }}>
-            <p className="uppercase tracking-[0.2em] text-[9px] mb-2">Pour toute question</p>
-            <a
-              href="mailto:contact@selma-jamil-mariage.ma"
-              className="text-sm tracking-wide transition-opacity duration-300 hover:opacity-100"
-              style={{ color: 'rgba(243,237,226,0.6)' }}
-            >
-              contact@selma-jamil-mariage.ma
-            </a>
-          </div>
         </motion.div>
       </div>
     </footer>
