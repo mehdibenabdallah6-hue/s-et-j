@@ -98,12 +98,12 @@ export default function Timeline() {
     <section id="programme" className="py-24 md:py-36 relative overflow-hidden">
       {/* Background Image */}
       <div
-        className="absolute inset-0 pointer-events-none opacity-[0.15] mix-blend-multiply"
+        className="absolute inset-0 pointer-events-none opacity-[0.25] mix-blend-multiply"
         style={{
           backgroundImage: 'url(/bg-programme.png)',
-          backgroundSize: 'cover',
+          backgroundSize: '100% 100%', // Force l'image à toucher les bords sans rogner
           backgroundPosition: 'center',
-          backgroundAttachment: 'fixed'
+          backgroundRepeat: 'no-repeat'
         }}
       />
 
