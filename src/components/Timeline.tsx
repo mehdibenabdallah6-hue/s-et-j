@@ -96,12 +96,14 @@ const events = [
 export default function Timeline() {
   return (
     <section id="programme" className="py-24 md:py-36 relative overflow-hidden">
-      {/* Faint diagonal watermark */}
+      {/* Background Image */}
       <div
-        className="absolute inset-0 pointer-events-none opacity-[0.03]"
+        className="absolute inset-0 pointer-events-none opacity-[0.15] mix-blend-multiply"
         style={{
-          backgroundImage: 'repeating-linear-gradient(-45deg, var(--color-wedding-illustration) 0, var(--color-wedding-illustration) 1px, transparent 0, transparent 50%)',
-          backgroundSize: '30px 30px',
+          backgroundImage: 'url(/bg-programme.png)',
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundAttachment: 'fixed'
         }}
       />
 
