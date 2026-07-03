@@ -5,7 +5,7 @@ const events = [
   { 
     time: '17H00', 
     title: 'Accueil des invités', 
-    image: '/accueil invitees.png',
+    image: '/accueil invitees 2.png',
     icon: (
       <svg viewBox="0 0 100 100" className="w-8 h-8" fill="none" stroke="currentColor" strokeWidth="1.5">
         <g transform="rotate(12 50 50)">
@@ -58,7 +58,7 @@ const events = [
   { 
     time: '22H00', 
     title: 'Doura', 
-    image: '/doura.png',
+    image: '/doura 2.png',
     icon: (
       <svg viewBox="0 0 100 100" className="w-8 h-8" fill="none" stroke="currentColor" strokeWidth="1.5">
         <line x1="12" y1="68" x2="88" y2="68" />
@@ -73,7 +73,7 @@ const events = [
   { 
     time: '23H00', 
     title: 'Dîner', 
-    image: '/dinner 2.png',
+    image: '/dinner 3.png',
     icon: (
       <svg viewBox="0 0 100 100" className="w-8 h-8" fill="none" stroke="currentColor" strokeWidth="1.5">
         <path d="M15,72 C15,77 85,77 85,72 Z" />
