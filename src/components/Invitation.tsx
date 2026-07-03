@@ -88,10 +88,10 @@ export default function Invitation() {
             Leila & Karim Benabdallah
           </p>
           <p
-            className="font-serif text-sm md:text-base italic"
-            style={{ color: 'var(--color-wedding-illustration)' }}
+            className="font-serif text-base md:text-lg italic"
+            style={{ color: 'var(--color-wedding-accent)' }}
           >
-            ont la joie de vous convier au mariage de leur fille
+            ont la joie de vous inviter au mariage de leur fille
           </p>
         </motion.div>
 
@@ -152,8 +152,8 @@ export default function Invitation() {
           viewport={{ once: true }}
           variants={fadeUp}
           custom={0.4}
-          className="font-serif text-sm md:text-base leading-relaxed md:leading-loose"
-          style={{ color: 'var(--color-wedding-illustration)' }}
+          className="font-serif text-base md:text-lg leading-relaxed md:leading-loose italic"
+          style={{ color: 'var(--color-wedding-accent)' }}
         >
           et seraient ravis de célébrer avec vous<br />
           cette heureuse union.

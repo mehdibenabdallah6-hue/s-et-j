@@ -5,7 +5,7 @@ const events = [
   { 
     time: '17H00', 
     title: 'Accueil des invités', 
-    image: '/invites.png',
+    image: '/accueil invitees.png',
     icon: (
       <svg viewBox="0 0 100 100" className="w-8 h-8" fill="none" stroke="currentColor" strokeWidth="1.5">
         <g transform="rotate(12 50 50)">
@@ -73,7 +73,7 @@ const events = [
   { 
     time: '23H00', 
     title: 'Dîner', 
-    image: '/dinner.png',
+    image: '/dinner 2.png',
     icon: (
       <svg viewBox="0 0 100 100" className="w-8 h-8" fill="none" stroke="currentColor" strokeWidth="1.5">
         <path d="M15,72 C15,77 85,77 85,72 Z" />
@@ -87,7 +87,7 @@ const events = [
   { 
     time: '00H30', 
     title: 'Robe Blanche', 
-    image: '/robe.png',
+    image: '/robe blanche.png',
     icon: (
       <svg viewBox="0 0 100 100" className="w-8 h-8" fill="none" stroke="currentColor" strokeWidth="1.5">
         <path d="M45,28 C45,23 55,23 55,28 L50,30 Z" />
@@ -250,9 +250,14 @@ export default function Timeline() {
           <p className="uppercase tracking-[0.25em] text-[10px] font-serif mb-3" style={{ color: 'var(--color-wedding-illustration)' }}>
             Jusqu'au bout de la nuit
           </p>
-          <h3 className="font-script text-4xl" style={{ color: 'var(--color-wedding-accent)' }}>
+          <h3 className="font-script text-4xl mb-10" style={{ color: 'var(--color-wedding-accent)' }}>
             Danse & célébration
           </h3>
+          <div className="flex justify-center">
+            <div className="rounded-2xl border border-[rgba(154,142,120,0.3)] shadow-sm overflow-hidden w-48 md:w-64 max-w-full">
+              <img src="/celebration.png" alt="Danse et Célébration" className="w-full h-auto object-cover hover:scale-105 transition-transform duration-700" />
+            </div>
+          </div>
         </motion.div>
       </div>
     </section>
