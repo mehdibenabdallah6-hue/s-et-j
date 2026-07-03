@@ -223,7 +223,7 @@ export default function Timeline() {
                     ) : event.image ? (
                       <div className="flex justify-center w-24 md:w-32">
                         <div className="rounded-2xl border border-[rgba(154,142,120,0.3)] shadow-sm overflow-hidden transition-transform duration-500 hover:scale-105">
-                          <img src={event.image} alt="" className="w-full h-auto" style={{ filter: 'saturate(1.3) contrast(1.1)' }} />
+                          <img src={event.image} alt="" className="w-full h-auto" style={{ filter: 'saturate(1.6) contrast(1.15)' }} />
                         </div>
                       </div>
                     ) : null}
