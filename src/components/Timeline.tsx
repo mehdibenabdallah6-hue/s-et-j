@@ -186,7 +186,7 @@ export default function Timeline() {
                     ) : event.image ? (
                       <div className="flex justify-center w-24 md:w-32">
                         <div className="rounded-2xl border border-[rgba(154,142,120,0.3)] shadow-sm overflow-hidden transition-transform duration-500 hover:scale-105">
-                          <img src={event.image} alt="" className="w-full h-auto" style={{ filter: 'saturate(1.6) contrast(1.15)' }} />
+                          <img src={event.image} alt="" className="w-full h-auto" />
                         </div>
                       </div>
                     ) : null}
@@ -223,7 +223,7 @@ export default function Timeline() {
                     ) : event.image ? (
                       <div className="flex justify-center w-24 md:w-32">
                         <div className="rounded-2xl border border-[rgba(154,142,120,0.3)] shadow-sm overflow-hidden transition-transform duration-500 hover:scale-105">
-                          <img src={event.image} alt="" className="w-full h-auto" style={{ filter: 'saturate(1.6) contrast(1.15)' }} />
+                          <img src={event.image} alt="" className="w-full h-auto" />
                         </div>
                       </div>
                     ) : null}
@@ -255,7 +255,7 @@ export default function Timeline() {
           </h3>
           <div className="flex justify-center">
             <div className="rounded-2xl border border-[rgba(154,142,120,0.3)] shadow-sm overflow-hidden w-48 md:w-64 max-w-full">
-              <img src="/celebration.png" alt="Danse et Célébration" className="w-full h-auto object-cover hover:scale-105 transition-transform duration-700" style={{ filter: 'saturate(1.6) contrast(1.15)' }} />
+              <img src="/celebration.png" alt="Danse et Célébration" className="w-full h-auto object-cover hover:scale-105 transition-transform duration-700" />
             </div>
           </div>
         </motion.div>
