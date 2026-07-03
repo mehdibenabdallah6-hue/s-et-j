@@ -27,7 +27,7 @@ const events = [
   { 
     time: '19H00', 
     title: 'Accueil de la famille du marié', 
-    image: '/marie 3.png',
+    image: '/marie 4.png',
     icon: (
       <svg viewBox="0 0 100 100" className="w-8 h-8" fill="none" stroke="currentColor" strokeWidth="1.5">
         <path d="M35,63 C30,48 35,38 50,38 C65,38 70,48 65,63 C60,70 40,70 35,63 Z" />
@@ -42,7 +42,7 @@ const events = [
   { 
     time: '19H30', 
     title: 'Entrée de la mariée', 
-    image: '/mariee3.png',
+    image: '/mariee 4.png',
     icon: (
       <svg viewBox="0 0 100 100" className="w-8 h-8" fill="none" stroke="currentColor" strokeWidth="1.5">
         <path d="M15,75 C30,85 70,85 85,75" />
@@ -184,9 +184,9 @@ export default function Timeline() {
                         </p>
                       </div>
                     ) : event.image ? (
-                      <div className="flex justify-center w-24 md:w-32">
-                        <div className="rounded-2xl border border-[rgba(154,142,120,0.3)] shadow-sm overflow-hidden transition-transform duration-500 hover:scale-105">
-                          <img src={event.image} alt="" className="w-full h-auto" />
+                      <div className="flex justify-center w-28 md:w-40">
+                        <div className="rounded-2xl border border-[rgba(154,142,120,0.3)] shadow-sm overflow-hidden transition-transform duration-500 hover:scale-105 w-full aspect-square">
+                          <img src={event.image} alt="" className="w-full h-full object-cover" />
                         </div>
                       </div>
                     ) : null}
@@ -221,9 +221,9 @@ export default function Timeline() {
                         </p>
                       </div>
                     ) : event.image ? (
-                      <div className="flex justify-center w-24 md:w-32">
-                        <div className="rounded-2xl border border-[rgba(154,142,120,0.3)] shadow-sm overflow-hidden transition-transform duration-500 hover:scale-105">
-                          <img src={event.image} alt="" className="w-full h-auto" />
+                      <div className="flex justify-center w-28 md:w-40">
+                        <div className="rounded-2xl border border-[rgba(154,142,120,0.3)] shadow-sm overflow-hidden transition-transform duration-500 hover:scale-105 w-full aspect-square">
+                          <img src={event.image} alt="" className="w-full h-full object-cover" />
                         </div>
                       </div>
                     ) : null}
