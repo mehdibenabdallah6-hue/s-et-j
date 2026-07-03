@@ -176,10 +176,10 @@ export default function Timeline() {
                   <div className={`flex items-center justify-end py-6 md:py-10 pr-6 md:pr-16`}>
                     {isLeft ? (
                       <div className="text-right max-w-[160px] md:max-w-none">
-                        <p className="font-serif uppercase tracking-[0.1em] md:tracking-[0.15em] text-sm md:text-lg font-bold mb-1 md:mb-2" style={{ color: 'var(--color-wedding-accent-light)' }}>
+                        <p className="font-serif uppercase tracking-[0.1em] md:tracking-[0.15em] text-sm md:text-lg font-bold mb-1 md:mb-2" style={{ color: '#722F37' }}>
                           {event.time}
                         </p>
-                        <p className="font-script text-[1.4rem] md:text-3xl leading-none" style={{ color: 'var(--color-wedding-illustration)' }}>
+                        <p className="font-script text-[1.4rem] md:text-3xl leading-none" style={{ color: 'var(--color-wedding-accent)' }}>
                           {event.title}
                         </p>
                       </div>
@@ -213,10 +213,10 @@ export default function Timeline() {
                   <div className={`flex items-center justify-start py-6 md:py-10 pl-6 md:pl-16`}>
                     {!isLeft ? (
                       <div className="text-left max-w-[160px] md:max-w-none">
-                        <p className="font-serif uppercase tracking-[0.1em] md:tracking-[0.15em] text-sm md:text-lg font-bold mb-1 md:mb-2" style={{ color: 'var(--color-wedding-accent-light)' }}>
+                        <p className="font-serif uppercase tracking-[0.1em] md:tracking-[0.15em] text-sm md:text-lg font-bold mb-1 md:mb-2" style={{ color: '#722F37' }}>
                           {event.time}
                         </p>
-                        <p className="font-script text-[1.4rem] md:text-3xl leading-none" style={{ color: 'var(--color-wedding-illustration)' }}>
+                        <p className="font-script text-[1.4rem] md:text-3xl leading-none" style={{ color: 'var(--color-wedding-accent)' }}>
                           {event.title}
                         </p>
                       </div>

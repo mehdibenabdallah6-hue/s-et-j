@@ -28,14 +28,14 @@ function useCountdown() {
 // ✅ FIX: height et width utilisent le même clamp que le font-size → plus de coupure
 function Digit({ value }: { value: number }) {
   const str = String(value).padStart(2, '0');
-  const fontSize = 'clamp(1.2rem, 3vw, 1.6rem)';
+  const fontSize = 'clamp(1.4rem, 4.5vw, 2rem)';
   return (
     <div
       style={{
         position: 'relative',
         // height doit contenir le texte → on force une valeur basée sur le font-size réel
-        height: 'clamp(1.5rem, 4vw, 2rem)',
-        width: 'clamp(2rem, 5vw, 2.5rem)',
+        height: 'clamp(2rem, 6vw, 3rem)',
+        width: 'clamp(2.5rem, 7vw, 3.5rem)',
         overflow: 'hidden',
       }}
     >
@@ -53,7 +53,7 @@ function Digit({ value }: { value: number }) {
             alignItems: 'center',
             justifyContent: 'center',
             fontFamily: 'var(--font-serif)',
-            fontWeight: 300,
+            fontWeight: 800,
             fontSize,
             lineHeight: 1,
             letterSpacing: '-0.02em',
@@ -84,21 +84,21 @@ export default function Countdown() {
           {/* Digit block */}
           <div className="flex flex-col items-center">
             <div 
-              className="w-12 h-12 md:w-16 md:h-16 flex items-center justify-center rounded-full mb-2"
+              className="w-20 h-20 md:w-28 md:h-28 flex items-center justify-center rounded-full mb-2"
               style={{
                 backgroundColor: 'rgba(255,255,255,0.4)',
-                border: '1px solid rgba(154,142,120,0.2)',
+                border: '1.5px solid rgba(154,142,120,0.3)',
                 boxShadow: 'inset 0 0 10px rgba(255,255,255,0.5)'
               }}
             >
               <Digit value={time[unit]} />
             </div>
             <span
-              className="uppercase font-serif"
+              className="uppercase font-serif font-bold"
               style={{
                 color: 'var(--color-wedding-accent)',
                 letterSpacing: '0.15em',
-                fontSize: '0.5rem',
+                fontSize: '0.75rem',
               }}
             >
               {unit}
