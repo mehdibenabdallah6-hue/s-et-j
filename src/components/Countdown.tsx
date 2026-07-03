@@ -77,14 +77,14 @@ export default function Countdown() {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.8, delay: 1.5 }}
-      className="flex flex-wrap justify-center items-center mt-6 gap-3 md:gap-6"
+      className="flex flex-wrap justify-center items-center mt-6 gap-2 md:gap-6"
     >
       {units.map((unit, i) => (
         <React.Fragment key={unit}>
           {/* Digit block */}
           <div className="flex flex-col items-center">
             <div 
-              className="w-20 h-20 md:w-28 md:h-28 flex items-center justify-center rounded-full mb-2"
+              className="w-16 h-16 md:w-24 md:h-24 flex items-center justify-center rounded-full mb-2"
               style={{
                 backgroundColor: 'rgba(255,255,255,0.4)',
                 border: '1.5px solid rgba(154,142,120,0.3)',
