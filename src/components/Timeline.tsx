@@ -184,9 +184,9 @@ export default function Timeline() {
                         </p>
                       </div>
                     ) : event.image ? (
-                      <div className="flex justify-center w-28 md:w-40">
-                        <div className="rounded-2xl border border-[rgba(154,142,120,0.3)] shadow-sm overflow-hidden transition-transform duration-500 hover:scale-105 w-full aspect-square">
-                          <img src={event.image} alt="" className="w-full h-full object-cover" />
+                      <div className="flex justify-center">
+                        <div className="rounded-2xl border border-[rgba(154,142,120,0.3)] shadow-sm overflow-hidden transition-transform duration-500 hover:scale-105">
+                          <img src={event.image} alt="" className="h-28 md:h-40 max-w-[110px] md:max-w-[160px] w-auto object-contain" />
                         </div>
                       </div>
                     ) : null}
@@ -221,9 +221,9 @@ export default function Timeline() {
                         </p>
                       </div>
                     ) : event.image ? (
-                      <div className="flex justify-center w-28 md:w-40">
-                        <div className="rounded-2xl border border-[rgba(154,142,120,0.3)] shadow-sm overflow-hidden transition-transform duration-500 hover:scale-105 w-full aspect-square">
-                          <img src={event.image} alt="" className="w-full h-full object-cover" />
+                      <div className="flex justify-center">
+                        <div className="rounded-2xl border border-[rgba(154,142,120,0.3)] shadow-sm overflow-hidden transition-transform duration-500 hover:scale-105">
+                          <img src={event.image} alt="" className="h-28 md:h-40 max-w-[110px] md:max-w-[160px] w-auto object-contain" />
                         </div>
                       </div>
                     ) : null}
